@@ -12,12 +12,14 @@ class TextConstants {
       'Enjoy the program fully and stay healhty !!';
 
   // Home
+  static const String welcome = 'Welcome';
   static const String topWorkouts = 'Top Workouts 💪';
   static const String weightLossTraining = 'Weight Loss Training';
   static const String fullBodyWorkout = 'Full Body Workout';
   static const String time = '40 min';
   static const String calories = '350 Cal';
   static const String categories = 'Categories';
+  static const String abs = 'Abs Workout';
   static const String yoga = 'Yoga';
   static const String strengthTraing = 'Strength Training';
   static const String functionalTraining = 'Functional Training';
