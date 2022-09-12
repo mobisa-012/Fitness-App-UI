@@ -5,6 +5,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../signup/page/signup_page.dart';
 import '../widget/onboarding_content.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -24,7 +25,7 @@ class OnboardingPage extends StatelessWidget {
         listenWhen: (_, currState) => currState is NextScreenState,
         listener: (context, state) {
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
-            return SignUpPage();
+            return const SignUpPage();
           }));
         },
         builder: (context, state) {

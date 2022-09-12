@@ -11,6 +11,37 @@ class TextConstants {
   static const String onboarding3Description =
       'Enjoy the program fully and stay healhty !!';
 
+  //Sign Up
+  static const String signUp = 'Sign up';
+  static const String signIn = 'Sign In';
+  static const String signOut = 'Sign Out';
+
+  static const String username = 'Username';
+  static const String userNamePlaceholder = 'Your name';
+  static const String userNameErrorText = 'Text is needed';
+
+  static const String email = 'Email';
+  static const String emailPlaceholder = 'example@mail.com';
+  static const String emailErrorText =
+      'Email is invalid, please enter email correctly';
+
+  static const String password = 'Password';
+  static const String passwordPlaceholder = 'Must be at least 6 characters';
+  static const String passwordErrorText =
+      'Password should contain at least 6 characters';
+
+  static const String confirmPassword = ' Confirm password';
+  static const String confirmpasswordPlaceholder = 'Re-enter password';
+  static const String confirmpasswordErrorText = 'Password does not match';
+
+  static const String alreadyHaveAnAccount = 'Already have an account?';
+
+  // Sign In
+  static const String passwordPlaceholderSignIn = 'Enter your password';
+  static const String forgotPassword = 'Forgot password';
+
+  static const String doNotHaveAnAcount = 'Do not have an account?';
+
   // Home
   static const String welcome = 'Welcome';
   static const String topWorkouts = 'Top Workouts 💪';
