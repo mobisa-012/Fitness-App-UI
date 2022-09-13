@@ -4,6 +4,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../widget/signup_content.dart';
+
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -38,7 +40,7 @@ class SignUpPage extends StatelessWidget {
         },
         buildWhen: (_, currState) => currState is SignUpInitial,
         builder: (context, state) {
-          return SignUpContent();
+          return const SignUpContent();
         },
       ),
     );
