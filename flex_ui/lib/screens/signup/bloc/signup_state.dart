@@ -1,5 +1,5 @@
-part of'signup_bloc.dart';
-
+part of 'signup_bloc.dart';
+@immutable
 abstract class SignUpState {}
 
 class SignUpInitial extends SignUpState {}

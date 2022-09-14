@@ -6,6 +6,7 @@ import 'package:flex_ui/screens/onboarding/page/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +40,7 @@ class _MyAppState extends State<MyApp> {
             android: initializationSettingsAndroid,
             iOS: initializationSettingsIOS);
             
-    tz.initialTimeZones();
+    tz.initializeTimeZones();
 
     flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onSelectNotification: selectNotification);

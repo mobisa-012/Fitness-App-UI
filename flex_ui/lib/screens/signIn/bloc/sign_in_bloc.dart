@@ -26,11 +26,11 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
           yield LoadingState();
           await AuthService.signIn(
               emailController.text, passwordController.text);
-          yield NextTabBarState();
+          yield NextTabBarPageState();
           print('Go to the next page');
         } catch (e) {
           print('E to string : ' + e.toString());
-          yield ErrorState(message: e.toString());
+          yield SignInErrorState(message: e.toString());
         }
       } else {
         yield ShowErrorState();

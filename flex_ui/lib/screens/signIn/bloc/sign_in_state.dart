@@ -1,10 +1,11 @@
-part of'sign_in_bloc.dart';
-
+part of 'sign_in_bloc.dart';
+@immutable
 abstract class SignInState {
   const SignInState();
 }
 
 class SignInInitial extends SignInState {}
+
 
 class SignInButtonEnabledChangedState extends SignInState {
   bool isEnabled;
@@ -13,11 +14,11 @@ class SignInButtonEnabledChangedState extends SignInState {
 
 class LoadingState extends SignInState {}
 
-class NextTabBarState extends SignInState {}
+class NextTabBarPageState extends SignInState {}
 
-class ErrorState extends SignInState {
+class SignInErrorState extends SignInState {
   final String message;
-  ErrorState ({required this.message});
+  const SignInErrorState ({required this.message});
 }
 
 class NextForgotPasswordPageState extends SignInState {}

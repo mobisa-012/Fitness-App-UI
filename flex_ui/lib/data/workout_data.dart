@@ -1,0 +1,4 @@
+class WorkoutData {
+  String? id;
+  
+}

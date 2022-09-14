@@ -4,6 +4,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../signIn/page/sign_in_page.dart';
 import '../widget/signup_content.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -31,7 +32,7 @@ class SignUpPage extends StatelessWidget {
           }
           if (state is NextSignInPageState) {
             Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => SignInPage()));
+                MaterialPageRoute(builder: (_) => const SignInPage()));
           }
           if (state is ErrorState) {
             ScaffoldMessenger.of(context)
