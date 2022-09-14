@@ -6,7 +6,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class FitnessTextField extends StatefulWidget {
-  final String tile;
+  final String title;
   final String placeholder;
   final String errorText;
   final bool obscureText;
@@ -18,7 +18,7 @@ class FitnessTextField extends StatefulWidget {
 
   const FitnessTextField(
       {Key? key,
-      required this.tile,
+      required this.title,
       required this.placeholder,
       required this.errorText,
       this.obscureText = false,
@@ -86,7 +86,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
 
   Widget _createHeader() {
     return Text(
-      widget.tile,
+      widget.title,
       style: TextStyle(
           color: _getUserNameColor(),
           fontSize: 14,

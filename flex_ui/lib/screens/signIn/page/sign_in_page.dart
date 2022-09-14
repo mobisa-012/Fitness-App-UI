@@ -1,3 +1,4 @@
+import 'package:flex_ui/screens/forgot_password/page/forgot_password_page.dart';
 import 'package:flex_ui/screens/signIn/bloc/sign_in_bloc.dart';
 import 'package:flex_ui/screens/signup/page/signup_page.dart';
 import 'package:flutter/material.dart';

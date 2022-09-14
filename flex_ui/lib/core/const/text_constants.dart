@@ -11,6 +11,11 @@ class TextConstants {
   static const String onboarding3Description =
       'Enjoy the program fully and stay healhty !!';
 
+   //forgot password
+  static const passwordReset = 'Password Reset';
+  static const sendActivationBuild = 'Send Activation Link';
+  static const resetPasswordLinkWasSent = 'Reset password link was sent on your email.';
+
   //Sign Up
   static const String signUp = 'Sign up';
   static const String signIn = 'Sign In';

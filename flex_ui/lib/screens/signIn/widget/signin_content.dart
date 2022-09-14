@@ -99,7 +99,7 @@ class SignInContent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             FitnessTextField(
-                tile: TextConstants.email,
+                title: TextConstants.email,
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.emailAddress,
                 placeholder: TextConstants.emailPlaceholder,
@@ -115,7 +115,7 @@ class SignInContent extends StatelessWidget {
               height: 20,
             ),
             FitnessTextField(
-                tile: TextConstants.password,
+                title: TextConstants.password,
                 placeholder: TextConstants.passwordPlaceholder,
                 obscureText: true,
                 isError: state is ShowErrorState

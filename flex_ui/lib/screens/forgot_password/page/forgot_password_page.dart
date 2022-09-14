@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
+import 'package:flex_ui/screens/forgot_password/widget/forgot_password_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -39,7 +40,7 @@ class ForgotPasswordPage extends StatelessWidget {
       child: BlocConsumer<ForgotPasswordBloc, ForgotPasswordState>(
         buildWhen: (_, currState) => currState is ForgotPasswordInitial,
         builder: (context, state) {
-          return ForgotPasswordContent();
+          return const ForgotPasswordContent();
         },
         listenWhen: (_, currState) =>
             currState is ForgotPasswordError ||
