@@ -1,4 +1,5 @@
 import 'package:flex_ui/screens/signup/bloc/signup_bloc.dart';
+import 'package:flex_ui/screens/tab_bar_page/page/tab_bar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -28,7 +29,7 @@ class SignUpPage extends StatelessWidget {
         listener: (context, state) {
           if (state is NextTabBarPageState) {
             Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => TabBarPage()));
+                MaterialPageRoute(builder: (_) => const TabBarPage()));
           }
           if (state is NextSignInPageState) {
             Navigator.of(context).pushReplacement(

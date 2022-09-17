@@ -1,6 +1,7 @@
 import 'package:flex_ui/screens/forgot_password/page/forgot_password_page.dart';
 import 'package:flex_ui/screens/signIn/bloc/sign_in_bloc.dart';
 import 'package:flex_ui/screens/signup/page/signup_page.dart';
+import 'package:flex_ui/screens/tab_bar_page/page/tab_bar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,13 +33,13 @@ class SignInPage extends StatelessWidget {
         listener: (context, state) {
           if (state is NextForgotPasswordPageState) {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+                .push(MaterialPageRoute(builder: (_) => const ForgotPasswordPage()));
           } else if (state is NextSignUpState) {
             Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (_) => const SignUpPage()));
           } else if (state is NextTabBarPageState) {
             Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => TabBarPage()));
+                MaterialPageRoute(builder: (_) => const TabBarPage()));
           } else if (state is SignInErrorState) {
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text(state.message)));

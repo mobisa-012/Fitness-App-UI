@@ -100,7 +100,7 @@ class SignUpContent extends StatelessWidget {
         return Column(
           children: [
             FitnessTextField(
-              tile: TextConstants.username,
+              title: TextConstants.username,
               placeholder: TextConstants.userNamePlaceholder,
               controller: bloc.userNameController,
               textInputAction: TextInputAction.next,
@@ -114,7 +114,7 @@ class SignUpContent extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             FitnessTextField(
-              tile: TextConstants.email,
+              title: TextConstants.email,
               placeholder: TextConstants.emailPlaceholder,
               textInputAction: TextInputAction.next,
               errorText: TextConstants.emailErrorText,
@@ -129,7 +129,7 @@ class SignUpContent extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             FitnessTextField(
-              tile: TextConstants.password,
+              title: TextConstants.password,
               placeholder: TextConstants.passwordPlaceholder,
               errorText: TextConstants.passwordPlaceholder,
               controller: bloc.passwordController,
@@ -143,7 +143,7 @@ class SignUpContent extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             FitnessTextField(
-              tile: TextConstants.confirmPassword,
+              title: TextConstants.confirmPassword,
               placeholder: TextConstants.confirmpasswordPlaceholder,
               errorText: TextConstants.confirmpasswordErrorText,
               controller: bloc.confirmPasswordController,
