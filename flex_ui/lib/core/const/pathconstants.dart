@@ -1,5 +1,6 @@
 class PathConstatnts  {
   //icons
+  static const String home = 'assets/icons/home_icon.png';
   static const String arrow = 'assets/icons/arrow_back.png';
   static const String eye = 'assets/icons/eye_icon.png';
   static const String facebook = 'assets/icons/facebook.png';
