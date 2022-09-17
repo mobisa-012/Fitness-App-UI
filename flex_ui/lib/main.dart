@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/services/notification_service.dart';
 import 'package:flex_ui/screens/onboarding/page/onboarding_page.dart';
+import 'package:flex_ui/screens/tab_bar_page/page/tab_bar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -51,7 +52,7 @@ class _MyAppState extends State<MyApp> {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flex Fitness',
-      home: isLoggedIn ? TabBarPage() : const OnboardingPage(),
+      home: isLoggedIn ? const TabBarPage() : const OnboardingPage(),
     );
   }
 
