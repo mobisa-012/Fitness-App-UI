@@ -1,14 +1,8 @@
-import 'dart:js';
-
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/data_constants.dart';
 import 'package:flex_ui/screens/onboarding/bloc/onboarding_bloc.dart';
-import 'package:flex_ui/screens/onboarding/bloc/onboarding_event.dart';
-import 'package:flex_ui/screens/onboarding/bloc/onboarding_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 

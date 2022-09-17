@@ -29,6 +29,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           await AuthService.signUp(emailController.text,
               passwordController.text, userNameController.text);
           yield NextTabBarPageState();
+          // ignore: avoid_print
           print('Go to the next page');
         } catch (e) {
           yield ErrorState(message: e.toString());

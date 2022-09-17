@@ -7,6 +7,7 @@ abstract class SignInState {
 class SignInInitial extends SignInState {}
 
 
+// ignore: must_be_immutable
 class SignInButtonEnabledChangedState extends SignInState {
   bool isEnabled;
   SignInButtonEnabledChangedState({required this.isEnabled});

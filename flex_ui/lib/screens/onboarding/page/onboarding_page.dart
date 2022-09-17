@@ -1,12 +1,9 @@
 import 'package:flex_ui/screens/onboarding/bloc/onboarding_bloc.dart';
-import 'package:flex_ui/screens/onboarding/bloc/onboarding_state.dart';
+import 'package:flex_ui/screens/onboarding/widget/onboarding_content.dart';
+import 'package:flex_ui/screens/signup/page/signup_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../signup/page/signup_page.dart';
-import '../widget/onboarding_content.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);

@@ -1,10 +1,7 @@
 import 'package:flex_ui/screens/signup/bloc/signup_bloc.dart';
 import 'package:flex_ui/screens/tab_bar_page/page/tab_bar_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../signIn/page/sign_in_page.dart';
 import '../widget/signup_content.dart';
 

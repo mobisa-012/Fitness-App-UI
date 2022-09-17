@@ -1,9 +1,7 @@
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/pathconstants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class FitnessTextField extends StatefulWidget {
   final String title;

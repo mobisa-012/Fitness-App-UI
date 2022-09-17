@@ -4,11 +4,8 @@ import 'package:flex_ui/core/services/validation_service.dart';
 import 'package:flex_ui/screens/common_widgets/fitness_button.dart';
 import 'package:flex_ui/screens/common_widgets/fitness_loading.dart';
 import 'package:flex_ui/screens/common_widgets/fitness_text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/sign_in_bloc.dart';
