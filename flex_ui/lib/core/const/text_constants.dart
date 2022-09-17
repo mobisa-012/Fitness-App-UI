@@ -48,6 +48,7 @@ class TextConstants {
   static const String doNotHaveAnAcount = 'Do not have an account?';
 
   // Home
+  static const String home = 'Home';
   static const String welcome = 'Welcome';
   static const String topWorkouts = 'Top Workouts 💪';
   static const String weightLossTraining = 'Weight Loss Training';
