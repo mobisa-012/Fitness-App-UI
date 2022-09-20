@@ -5,14 +5,12 @@ class ExerciseData {
   final String image;
   final String video;
   final String description;
-  final List<String> steps;
 
   ExerciseData(
       {required this.description,
       required this.image,
       required this.minutes,
       required this.progress,
-      required this.steps,
       required this.title,
       required this.video});
 

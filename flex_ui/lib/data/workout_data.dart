@@ -4,19 +4,21 @@ class WorkoutData {
   final String title;
   final String exercises;
   final String minutes;
-  final String currentProgress;
+  final int currentProgress;
   final int progress;
   final String image;
   final List<ExerciseData> exerciseDataList;
 
   WorkoutData(
-      {required this.currentProgress,
+      {
+      required this.currentProgress,
       required this.exercises,
       required this.exerciseDataList,
       required this.image,
       required this.minutes,
       required this.progress,
-      required this.title});
+      required this.title
+      });
 
   @override
   String toString() {
