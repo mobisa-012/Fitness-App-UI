@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/services/notification_service.dart';
 import 'package:flex_ui/screens/onboarding/page/onboarding_page.dart';
 import 'package:flex_ui/screens/tab_bar_page/page/tab_bar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+// ignore: depend_on_referenced_packages
 import 'package:timezone/data/latest.dart' as tz;
 
 void main() async {
@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     const AndroidInitializationSettings initializationSettingsAndroid =
@@ -47,6 +48,7 @@ class _MyAppState extends State<MyApp> {
         onSelectNotification: selectNotification);
   }
 
+  @override
   Widget build(BuildContext context) {
     final isLoggedIn = FirebaseAuth.instance.currentUser != null;
     return  MaterialApp(
