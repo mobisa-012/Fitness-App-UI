@@ -50,16 +50,27 @@ class TextConstants {
   // Home
   static const String home = 'Home';
   static const String welcome = 'Welcome';
+    //weightlosscard
   static const String topWorkouts = 'Top Workouts 💪';
   static const String weightLossTraining = 'Weight Loss Training';
   static const String fullBodyWorkout = 'Full Body Workout';
   static const String time = '40 min';
   static const String calories = '350 Cal';
+    //categoriescard
   static const String categories = 'Categories';
   static const String abs = 'Abs Workout';
   static const String yoga = 'Yoga';
   static const String strengthTraing = 'Strength Training';
   static const String functionalTraining = 'Functional Training';
+
+  //booty card
+  static const String booty = 'Round Booty';
+
+  //cardio card
+  static const String cardio = 'Cardio';
+
+  //Pilated card
+  static const String pilates = 'Pilates';
 
   //Analytics screen
   static const String analytics = 'Analytics';
@@ -71,4 +82,6 @@ class TextConstants {
   //Workout Screen
   static const String workout = 'Workout';
   static const String start = 'Start';
+  static const String exercisesLowercase = "exercises";
+  static const String exercisesUppercase = "Exercises";
 }

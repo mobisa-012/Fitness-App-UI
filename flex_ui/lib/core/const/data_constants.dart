@@ -1,8 +1,10 @@
 import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
-import 'package:flex_ui/screens/onboarding/bloc/onboarding_bloc.dart';
+import 'package:flex_ui/data/exercise_data.dart';
+import 'package:flex_ui/data/workout_data.dart';
 import 'package:flex_ui/screens/onboarding/widget/onboarding_tile.dart';
 
+// onboarding screen
 class DataConstants {
   static final onboardingTiles = [
     const OnboardingTile(
@@ -20,5 +22,37 @@ class DataConstants {
       mainText: TextConstants.onboarding3Description,
       title: TextConstants.onboarding3Title,
     )
+  ];
+
+  static final List<WorkoutData> homeWorkoutsTopWorkouts = [
+    WorkoutData(
+      //weight losss container
+      currentProgress: 10, 
+      exercises: TextConstants.fullBodyWorkout, 
+      exerciseDataList: [
+        ExerciseData(
+          title: ,
+          minutes: ,
+          progress: ,
+          video: ,
+          description: ,
+          image: ,
+        )], 
+      image: PathConstatnts.fullbody, 
+      minutes: TextConstants.time, 
+      progress: 16, 
+      title: TextConstants.weightLossTraining,
+      )
+  ];
+
+  static final List<WorkoutData> categoriesWorkouts = [
+    WorkoutData(
+      currentProgress: currentProgress, 
+      exercises: exercises, 
+      exerciseDataList: exerciseDataList, 
+      image: image, 
+      minutes: minutes, 
+      progress: progress, 
+      title: title)
   ];
 }
