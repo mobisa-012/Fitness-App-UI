@@ -7,7 +7,7 @@ class BackTappedEvent extends WorkoutDetailsEvent {}
 
 class WorkoutExerciseCellTappedEvent extends WorkoutDetailsEvent {
   final ExerciseData currentExercise;
-  final ExerciseData nextExercise;
+  final ExerciseData? nextExercise;
 
   WorkoutExerciseCellTappedEvent ({
     required this.currentExercise,
