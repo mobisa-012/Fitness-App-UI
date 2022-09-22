@@ -3,7 +3,9 @@ import 'package:flex_ui/core/extensions/list_extensions.dart';
 import 'package:flex_ui/data/exercise_data.dart';
 import 'package:flex_ui/data/workout_data.dart';
 import 'package:flex_ui/screens/common_widgets/fitness_button.dart';
+import 'package:flex_ui/screens/start_workout_screen/page/start_workout_screen_page.dart';
 import 'package:flex_ui/screens/workout_details_screen/bloc/workoutdetails_bloc.dart';
+import 'package:flex_ui/screens/workout_details_screen/widget/workout_details_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,7 +47,7 @@ class WorkoutDetailsPage extends StatelessWidget {
                             child: StartWorkoutPage(
                               exercise: exercise!,
                               currentExercise: exercise,
-                              nextExerciese: exerciseIndex + 1 <
+                              nextExercise: exerciseIndex + 1 <
                                       workout.exerciseDataList.length
                                   ? workout.exerciseDataList[exerciseIndex + 1]
                                   : null,
