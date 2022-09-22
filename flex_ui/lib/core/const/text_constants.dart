@@ -82,6 +82,11 @@ class TextConstants {
   //Workout Screen
   static const String workout = 'Workout';
   static const String start = 'Start';
-  static const String exercisesLowercase = "exercises";
+   static const String exercisesLowercase = "exercises";
   static const String exercisesUppercase = "Exercises";
+
+  // Start Workout screen
+  static const String back = "Back";
+  static const String next = "Next";
+  static const String nextExercise = "Next Exercise:";
 }
