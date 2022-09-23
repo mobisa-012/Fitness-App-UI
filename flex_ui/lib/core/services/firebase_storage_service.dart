@@ -1,0 +1,32 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flex_ui/core/services/user_service.dart';
+
+
+class FirebaseStorage {
+  FirebaseStorage storage = FirebaseStorage.instance;
+
+  static Future<void> listExample() async {
+    ListResult result = await FirebaseStorage.instance.ref().listAll();
+    result.items.forEach((element) {
+      print(element.name);
+    });
+  }
+
+  static Future<bool> uploadImage({required String filePath}) async {
+    try {
+      final User? user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        TaskSnapshot upload = await FirebaseStorage.instance
+            .ref('user_logos/${user.uid}.png')
+            .putFile(file);
+        String downloadUrl = await upload.ref.getDownloadURL();
+        await UserService.editPhoto(downloadUrl);
+        return true;
+      }
+      return false;
+    } catch (e) {
+      print(e);
+      return false;
+    }
+  }
+}
