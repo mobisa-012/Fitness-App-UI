@@ -11,10 +11,11 @@ class TextConstants {
   static const String onboarding3Description =
       'Enjoy the program fully and stay healhty !!';
 
-   //forgot password
+  //forgot password
   static const passwordReset = 'Password Reset';
   static const sendActivationBuild = 'Send Activation Link';
-  static const resetPasswordLinkWasSent = 'Reset password link was sent on your email.';
+  static const resetPasswordLinkWasSent =
+      'Reset password link was sent on your email.';
 
   //Sign Up
   static const String signUp = 'Sign up';
@@ -50,13 +51,13 @@ class TextConstants {
   // Home
   static const String home = 'Home';
   static const String welcome = 'Welcome';
-    //weightlosscard
+  //weightlosscard
   static const String topWorkouts = 'Top Workouts 💪';
   static const String weightLossTraining = 'Weight Loss Training';
   static const String fullBodyWorkout = 'Full Body Workout';
   static const String time = '40 min';
   static const String calories = '350 Cal';
-    //categoriescard
+  //categoriescard
   static const String categories = 'Categories';
   static const String abs = 'Abs Workout';
   static const String yoga = 'Yoga';
@@ -82,11 +83,51 @@ class TextConstants {
   //Workout Screen
   static const String workout = 'Workout';
   static const String start = 'Start';
-   static const String exercisesLowercase = "exercises";
+  static const String exercisesLowercase = "exercises";
   static const String exercisesUppercase = "Exercises";
 
   // Start Workout screen
   static const String back = "Back";
   static const String next = "Next";
   static const String nextExercise = "Next Exercise:";
+
+  //Profile Screen
+  static const String joinUs = 'Join us in social media';
+  static const String calendar = "Calendar";
+  static const String reminder = "Reminder";
+  static const String rateUsOn = "Rate us on ";
+  static const String terms = "Terms & Conditions";
+
+  //Reminder Screen
+  static const String everyday = "Everyday";
+  // ignore: constant_identifier_names
+  static const String monday_friday = "Mon - Fri";
+  static const String weekends = "Weekends";
+  static const String monday = "Monday";
+  static const String tuesday = "Tue";
+  static const String wednesday = "Wed";
+  static const String thursday = "Thu";
+  static const String friday = "Fri";
+  static const String saturday = "Sat";
+  static const String sunday = "Sun";
+
+// Edit account screen
+  static const String editAccount = 'Edit account';
+  static const String editPhoto = 'Edit photo';
+  static const String fullName = 'Full name';
+  static const String nameShouldContain2Char =
+      'Name should contain at least 2 characters';
+  static const String changePassword = 'Change Password';
+
+  // Edit account screen -> show settings
+  static const String cameraPermission = 'Camera permisson';
+  static const String cameAccess =
+      'This app needs camera access to take pictures for upload user profile photo';
+  static const String deny = 'Deny';
+  static const String settings = 'Settings';
+  static const String fullNamePlaceholder = 'Enter your full name';
+
+  //Change password screen
+  static const String newPassword = 'New password';
+  static const String passwordUpdated = 'Password successfully updated!';
 }
