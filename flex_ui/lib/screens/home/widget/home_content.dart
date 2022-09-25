@@ -1,19 +1,15 @@
-import 'dart:ui';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/data_constants.dart';
 import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
+import 'package:flex_ui/screens/edit_account_screen/page/edit_account_screen.dart';
 import 'package:flex_ui/screens/home/bloc/home_bloc.dart';
 import 'package:flex_ui/screens/home/widget/home_exercises_card.dart';
 import 'package:flex_ui/screens/workout_details_screen/page/workoutdetails_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
+
 
 class HomeContent extends StatelessWidget {
   const HomeContent({Key? key}) : super(key: key);
@@ -98,7 +94,7 @@ class HomeContent extends StatelessWidget {
                       ),
                 onTap: () async {
                   await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => EditAccountScreen()));
+                      MaterialPageRoute(builder: (_) => const EditAccountScreen()));
                   // ignore: use_build_context_synchronously
                   BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
                 },
