@@ -1,6 +1,7 @@
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
+import 'package:flex_ui/screens/home/page/home_page.dart';
 import 'package:flex_ui/screens/tab_bar_page/bloc/tab_bar_page_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,7 +53,7 @@ class TabBarPage extends StatelessWidget {
             label: TextConstants.home),
         BottomNavigationBarItem(
             icon: Image(
-              image: const AssetImage(PathConstatnts.account),
+              image: const AssetImage(PathConstatnts.settings),
               color: bloc.currentIndex == 2
                   ? AppColors.weightLossContainerColor
                   : null,
@@ -66,7 +67,7 @@ class TabBarPage extends StatelessWidget {
   }
 
   Widget _createBody(BuildContext context, int index) {
-    final children = [HomePage(), AnalyticsPage(), ProfilePage()];
+    final children = [const HomePage(), AnalyticsPage(), ProfilePage()];
     return children[index];
   }
 }
