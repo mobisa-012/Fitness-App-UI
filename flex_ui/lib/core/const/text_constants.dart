@@ -51,6 +51,7 @@ class TextConstants {
   // Home
   static const String home = 'Home';
   static const String welcome = 'Welcome';
+  static const String save = 'Save';
   //weightlosscard
   static const String topWorkouts = 'Top Workouts 💪';
   static const String weightLossTraining = 'Weight Loss Training';
