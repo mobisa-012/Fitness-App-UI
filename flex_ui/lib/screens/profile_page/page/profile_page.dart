@@ -6,6 +6,7 @@ import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
 import 'package:flex_ui/core/services/auth_service.dart';
 import 'package:flex_ui/screens/common_widgets/setting_container.dart';
+import 'package:flex_ui/screens/edit_account_screen/page/edit_account_screen.dart';
 import 'package:flex_ui/screens/profile_page/bloc/profile_page_bloc.dart';
 import 'package:flex_ui/screens/signIn/page/sign_in_page.dart';
 import 'package:flutter/foundation.dart';
@@ -81,7 +82,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   await Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => EditAccountScreen()));
+                          builder: (context) => const EditAccountScreen()));
                   setState(() {
                     photoUrl = user?.photoURL;
                   });
