@@ -10,7 +10,7 @@ class SettingsTextField extends StatefulWidget {
   const SettingsTextField(
       {super.key,
       required this.controller,
-      required this.obscureText,
+      this.obscureText = false,
       required this.placeHolder});
 
   @override
