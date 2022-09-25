@@ -131,4 +131,8 @@ class TextConstants {
   //Change password screen
   static const String newPassword = 'New password';
   static const String passwordUpdated = 'Password successfully updated!';
+
+  // Reminder screen
+  static const String selectTime = "Please select reminder time";
+  static const String repeating = "How often repeat";
 }

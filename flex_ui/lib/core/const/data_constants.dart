@@ -55,4 +55,16 @@ class DataConstants {
       progress: progress, 
       title: title)
   ];
+  static List<String> reminderDays = [
+    TextConstants.everyday,
+    TextConstants.monday_friday,
+    TextConstants.weekends,
+    TextConstants.monday,
+    TextConstants.tuesday,
+    TextConstants.wednesday,
+    TextConstants.thursday,
+    TextConstants.friday,
+    TextConstants.saturday,
+    TextConstants.sunday,
+  ];
 }
