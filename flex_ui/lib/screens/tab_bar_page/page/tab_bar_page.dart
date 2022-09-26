@@ -1,6 +1,7 @@
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
+import 'package:flex_ui/screens/analytics_page/page/analytics_page.dart';
 import 'package:flex_ui/screens/home/page/home_page.dart';
 import 'package:flex_ui/screens/profile_page/page/profile_page.dart';
 import 'package:flex_ui/screens/tab_bar_page/bloc/tab_bar_page_bloc.dart';
@@ -68,7 +69,7 @@ class TabBarPage extends StatelessWidget {
   }
 
   Widget _createBody(BuildContext context, int index) {
-    final children = [const HomePage(), AnalyticsPage(), const ProfilePage()];
+    final children = [const HomePage(), const AnalyticsPage(), const ProfilePage()];
     return children[index];
   }
 }
