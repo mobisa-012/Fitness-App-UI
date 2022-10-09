@@ -80,6 +80,7 @@ class TextConstants {
   static const String activeCalories = 'Active Calories';
   static const String workoutTime = 'Workout time';
   static const String steps = 'Steps';
+  static const String today = 'Today';
 
   //Workout Screen
   static const String workout = 'Workout';
@@ -135,4 +136,68 @@ class TextConstants {
   // Reminder screen
   static const String selectTime = "Please select reminder time";
   static const String repeating = "How often repeat";
+
+  //workouts
+  //Weight Loss
+  static const String highKness = 'High knees';
+  static const String squats = 'Squats';
+  static const String jumpRope = 'Jump rope';
+  static const String highPlank = 'High plank';
+  static const String mountainClimber = 'Mountain climber';
+  static const String toeTouches = 'Toe touches';
+
+  //Abs workouts
+  static const String crunchKicks = 'Crunch kicks';
+  static const String russianTwist = 'Russian twist';
+  static const String slowMountainClimber = 'Slow mountain climber';
+  static const String abHold = 'Ab hold';
+  static const String reversecrunches = 'Reverse crunches';
+  static const String rightSideCrunch = 'Right side crunch';
+  static const String leftSideCrunch = 'Left side crunch';
+
+  //Cardio workouts
+  static const String cardiojumpRope = 'Jump rope';
+  static const String sideHop = 'Side hop';
+  static const String jumpingJack = 'Jumping jacks';
+  static const String cardioHighKnees = 'High knees';
+
+  //pilates workouts
+  static const String legCircle = 'Leg circle';
+  static const String pilates100 = 'Pilates 100';
+  static const String singleLegStretch = 'Single leg stretch';
+  static const String crissCross = 'Criss-cross';
+  static const String doubleLegStretch = 'Double leg stretch';
+  static const String scissorKicks = 'Scissor kicks';
+  static const String plankLegLift = 'Plank leg lift';
+  static const String teaser = 'Teaser';
+  static const String plankRock = 'Plank rock';
+  static const String highPlanktoPike = 'Hight plank to pike';
+
+  //Booty workouts
+  static const String bootySquats = 'Squats';
+  static const String sumoSquats = 'Sumo squats';
+  static const String donkeyKicksLeft = 'Donkey kicks left';
+  static const String donkeyKicksRight = 'Donkey kicks right';
+  static const String lunges = 'Lunges';
+  static const String buttBridge = 'Butt bridge';
+  static const String jumpingSquats = 'Jumping squats';
+
+  //Thigh workouts
+  static const String thighs = 'Thighs';
+  static const String thighSSumoSquats = 'Sumo squats';
+  static const String thighdonkeyKicksLeft = 'Donkey kicks left';
+  static const String thighdonkeyKicksRight = 'Donkey kicks right';
+  static const String sideLegLiftLeft = 'Side leg lift left';
+  static const String sideLegLiftRight = 'Side leg lift right';
+  static const String thighSumoSquats = 'Sumo squats';
+
+  //Yoga workout
+  static const String cowPose = 'Cow pose';
+  static const String childPose = 'Child pose';
+  static const String warriorII = 'Warrior II';
+  static const String downwardDog = 'Downward dog';
+  static const String upwardDog = 'Upward dog';
+  static const String reverseWarrior = 'Reverse warrior';
+  static const String plank = 'Plank';
+  static const String highLunge = 'High lunge';
 }
