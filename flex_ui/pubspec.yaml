@@ -42,14 +42,22 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  
+  assets:
+     - assets/images/onboarding/
+     - assets/images/home/
+     - assets/images/workout_images/
+     - assets/icons/
+     - assets/workout_videos/
+
+  fonts:
+     - family: NotoSansKR
+       fonts:
+         - asset: assets/fonts/NotoSansKR/NotoSansKR-Regular.otf
+         - asset: assets/fonts/NotoSansKR/NotoSansKR-Medium.otf
+           weight: 500
+         - asset: assets/fonts/NotoSansKR/NotoSansKR-Bold.otf
+           weight: 700
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
