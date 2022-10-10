@@ -5,7 +5,7 @@ class ExerciseData {
   final String image;
   final String video;
   final String description;
-  final String steps;
+  final List<String> steps;
 
   ExerciseData(
       {required this.description,
