@@ -6,8 +6,8 @@ class FitnessButton extends StatelessWidget {
   final bool isEnabled;
   final Function() onTap;
 
-   FitnessButton(
-      {
+   const FitnessButton(
+      {super.key, 
       required this.title,
       this.isEnabled = true,
       required this.onTap});

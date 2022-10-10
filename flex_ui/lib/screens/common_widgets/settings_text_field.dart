@@ -44,10 +44,10 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
           _createSettingsTextField(),
           if (widget.obscureText) ...[
             Positioned(
-              child: _createShowEye(),
               right: 0,
               bottom: 0,
               top: 0,
+              child: _createShowEye(),
             )
           ]
         ],
