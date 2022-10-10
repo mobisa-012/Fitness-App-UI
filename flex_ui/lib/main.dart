@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/services/notification_service.dart';
 import 'package:flex_ui/screens/onboarding/page/onboarding_page.dart';
 import 'package:flex_ui/screens/tab_bar_page/page/tab_bar_page.dart';
@@ -54,6 +55,12 @@ class _MyAppState extends State<MyApp> {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flex Fitness',
+      theme: ThemeData(
+        textTheme: const TextTheme(bodyText1: TextStyle(color: AppColors.textColor)),
+        fontFamily: 'NotoSansKR',
+        scaffoldBackgroundColor: Colors.white,
+        visualDensity: VisualDensity.adaptivePlatformDensity
+      ),
       home: isLoggedIn ? const TabBarPage() : const OnboardingPage(),
     );
   }
