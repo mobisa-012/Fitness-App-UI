@@ -9,9 +9,10 @@ class FirebaseStorageService {
   FirebaseStorage storage = FirebaseStorage.instance;
   static Future<void> listExample() async {
     ListResult result = await FirebaseStorage.instance.ref().listAll();
-    result.items.forEach((element) {
+    for (var element in result.items) {
+      // ignore: avoid_print
       print(element.name);
-    });
+    }
   }
 
   static Future<bool> uploadImage({required String filePath}) async {
@@ -26,6 +27,7 @@ class FirebaseStorageService {
       }
       return false;
     } catch (e) {
+      // ignore: avoid_print
       print(e);
       return false;
     }
