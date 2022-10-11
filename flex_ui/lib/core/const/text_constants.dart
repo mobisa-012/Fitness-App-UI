@@ -202,6 +202,8 @@ class TextConstants {
 
   //workouts description
   //high knees
+  static const String highKneesDescription =
+      'High knees activates your lower body and core muscles, and leads to a quick sweat.';
   static const String highKneesDescription1 =
       'Stand tall with your feet about hip-to-shoulder-width apart and your arms at your sides.';
   static const String highKneesDescription2 =
@@ -216,6 +218,8 @@ class TextConstants {
       'Now alternate your right and left leg for the workout time.';
 
   //squats
+  static const String squatsDescription =
+      'The squat is a fundamental movement pattern that requires multiple joint and muscle integration.';
   static const String squatsDescription1 =
       'Start with your feet shoulder-width apart, toes slightly out, and your arms down at your side.';
   static const String squatsDescription2 =
@@ -224,6 +228,8 @@ class TextConstants {
       'When your thighs are parallel to the ground, stop and push up through your heels to return to start.';
 
   //jump rope
+  static const String jumpRopeDescription =
+      'Jumping rope is one of the most effective exercises for burning calories, building endurance & strength in as little as 20 minutes.';
   static const String jumpRopeDescription1 =
       'Keep your feet close together when jumping';
   static const String jumpRopeDescription2 =
@@ -243,6 +249,8 @@ class TextConstants {
       'Use your wrists to turn the rope (not your elbows or shoulders)';
 
   //high plank
+  static const String highPlankDescription =
+      'planks can help improve core strength and stability';
   static const String highPlankDescription1 =
       'Start on all fours on the floor with hands stacked directly under shoulders and knees bent and stacked directly under hips.';
   static const String highPlankDescription2 =
@@ -253,6 +261,8 @@ class TextConstants {
       'Actively push away from floor and don\'t allow hips to droop.';
 
   //mountain climber
+  static const String mountainClimberDescription =
+      'Mountain climbers are great for building cardio endurance, core strength, and agility.';
   static const String mountainClimberDescription1 =
       'Get into a plank position, making sure to distribute your weight evenly between your hands and your toes.';
   static const String mountainClimberDescription2 =
@@ -265,6 +275,8 @@ class TextConstants {
       'Keep your hips down and run your knees in and out as far and as fast as you can. Alternate inhaling and exhaling with each leg change.';
 
   //toe touches
+  static const String toeTouchesDescription =
+      'Toe touches can provide a good hamstring stretch, according to the trainer.';
   static const String toeTouchesDescription1 =
       'Lay flat on your back with your legs perpendicular to the floor (legs straight up in the air).';
   static const String toeTouchesDescription2 =
@@ -275,6 +287,8 @@ class TextConstants {
       'Repeat the exercise until your set is complete.';
 
   //crunch kicks
+  static const String crunchKicksDescription =
+      'Tone your abs. Strengthen your core. Burn calories';
   static const String crunchKicksDescription1 =
       'Lie down on the floor with your arms stretched at your sides. Your palms should be on the floor and slightly away from your body. Your shoulders should be slightly lifted.';
   static const String crunchKicksDescription2 =
@@ -286,24 +300,30 @@ class TextConstants {
 
   //russian twist
   static const String russianTwistDescription =
-      'Root into your sit bones as you lift your feet from the floor, keeping your knees bent.';
+      'The Russian twist is an effective way to build your core and shoulders';
   static const String russianTwistDescription1 =
-      'Elongate and straighten your spine at a 45-degree angle from the floor, creating a V shape with your torso and thighs.';
+      'Root into your sit bones as you lift your feet from the floor, keeping your knees bent.';
   static const String russianTwistDescription2 =
-      'Reach your arms straight out in front, interlacing your fingers or clasping your hands together.';
+      'Elongate and straighten your spine at a 45-degree angle from the floor, creating a V shape with your torso and thighs.';
   static const String russianTwistDescription3 =
-      'Use your abdominals to twist to the right, then back to center, and then to the left.';
+      'Reach your arms straight out in front, interlacing your fingers or clasping your hands together.';
   static const String russianTwistDescription4 =
+      'Use your abdominals to twist to the right, then back to center, and then to the left.';
+  static const String russianTwistDescription5 =
       'Reapeat the same to complete your set';
 
   //for slow mountain climber repeat as mountain climber
   //ab hold
+  static const String abHoldDescription =
+      'Improves core strength and burns calories';
   static const String abHoldDescription1 =
       'Start lying on back with with your arms extended overhead on floor and legs straight resting on mat.';
   static const String abHoldDescription2 =
       'At the same time, and with control, lift arms, head, shoulder blades, and legs off the floor.';
 
   //reverse crunches
+  static const String reversecrunchesDescription =
+      't is good for developing an appealing stomach musculature as well as strong and functional abs';
   static const String reversecrunchesDescription1 =
       'Lying on a mat or other flat surface, with your feet off the ground.';
   static const String reversecrunchesDescription2 =
@@ -320,6 +340,8 @@ class TextConstants {
       'Repeat until the set is complete';
 
   // right side crunch
+  static const sideCrunchDescription =
+      'Workout is designed to activate yoyr obliques and core muscles';
   static const String rightSideCrunchDescription1 = 'Lie on your back.';
   static const String rightSideCrunchDescription2 =
       'Keeping your torso straight, bend your knees and bring them to the left so they are resting on the floor.';
@@ -347,6 +369,8 @@ class TextConstants {
 
 // use jump rope description for cardio part
 //side hop
+  static const String sideHopDescription =
+      'Increases aerobic fitness and boosts weight loss';
   static const String sideHopDescription1 =
       'Begin in an athletic stance with feet about hip-width apart.';
   static const String sideHopDescription2 =
@@ -355,16 +379,20 @@ class TextConstants {
   static const String sideHopDescription4 = 'Repeat to complete your set';
 
 //jumping jacks
-  static const String jumpingJackDescription =
-      'Begin by standing with your legs straight and your arms to your sides.';
+  static const String jumpingJacksDescription =
+      'This type of exercise works your heart, lungs, and muscles at the same time.';
   static const String jumpingJackDescription1 =
+      'Begin by standing with your legs straight and your arms to your sides.';
+  static const String jumpingJackDescription2 =
       'Jump up and spread your feet beyond hip-width apart while bringing your arms above your head, nearly touching.';
-  static const String jumpingJackDescriptio2 =
+  static const String jumpingJackDescription3 =
       'Jump again, lowering your arms and bringing your legs together. Return to your starting position';
-  static const String jumpingJackDescription3 = 'Repate to complete your set';
+  static const String jumpingJackDescription4 = 'Repate to complete your set';
 
 //use high knees for cardio high knees
 //leg circle
+  static const String legCircleDescription =
+      'Targest the core, hamstrings and quadriceps';
   static const String legCircleDescription1 =
       'Engage your core. Pull your abdominal muscles in, anchoring the pelvis and shoulders. Draw one knee in towards the chest and then extend it straight toward the ceiling.';
   static const String legCircleDescription2 =
@@ -377,6 +405,7 @@ class TextConstants {
       'Stretch, before switching legs, by climbing the hands up the outstretched leg to hold the ankle. Hold the position for three full breath cycles, gently pulling the leg closer and closer to you. Then repeat steps 1 to 4 on the opposite leg and finish with another stretch.';
 
 //pilates 100
+  static const String pilates100Description = 'Targets: Abdominals';
   static const String pilates100Description1 =
       'Start lying on your back. Bring both knees into the chest to form a tabletop position.';
   static const String pilates100Description2 =
@@ -389,6 +418,7 @@ class TextConstants {
       'Be sure to keep your shoulders and neck relaxed and focus on your abdominal muscles doing all the work.';
 
   //single leg stretch
+  static const String singleLegStretchDescription = 'Targets: Abdominals';
   static const String singleLegStretchDescription1 =
       'Lay down flat on your back and pull your right knee to your chest.';
   static const String singleLegStretchDescription2 =
@@ -401,6 +431,8 @@ class TextConstants {
       ' Hold this position for a second or two and then alternate legs. Continue back and forth for the desired amount of reps.';
 
   //cirss cross
+  static const String crissCrossDescription =
+      'Strengthens the abs and loweer back';
   static const String crissCrossDescription1 =
       'Exhale and straighten one leg while simultaneously rotating the trunk toward the opposite bent knee';
   static const String crissCrossDescription2 =
@@ -415,6 +447,8 @@ class TextConstants {
       'Now, repeat to complete your set';
 
 //double leg streych
+  static const String doubleLegStretchDescription =
+      'Targets the abs, loweer back, neck and obliques';
   static const String doubleLegStretchDescription1 =
       'Pull your abdominal muscles in to curve your upper body up off the floor as you exhale.';
   static const String doubleLegStretchDescription2 =
@@ -435,6 +469,7 @@ class TextConstants {
       'Do not drop your upper body curve. Repeat to complete a set';
 
 //scissor kicks
+  static const String scissorKicksDescription = 'Builds the core strength';
   static const String scissorKicksDescription1 =
       'Lie on your back on the mat with your legs extended out in front of you.Place your arms by your sides, palms down.';
   static const String scissorKicksDescription2 =
@@ -449,6 +484,8 @@ class TextConstants {
       'Continue the scissoring motion by slowly switching your legs up and down for the recommended amount of repetitions.';
 
 //plank leg lift
+  static const String plankLegLiftDescription =
+      'Improves stability in the core, spine and hip areas';
   static const String plankLegLiftDescritption1 =
       'Start by assuming a pushup position and keep your hands at a shoulder-width';
   static const String plankLegLiftDescritption2 =
@@ -463,6 +500,8 @@ class TextConstants {
       'Repeat to complete your exercise';
 
 //teaser
+  static const String teaserDescription =
+      'Targest the abs, hamstrings,hip flexors and lower bcak';
   static const String teaserDescription1 =
       'Lay down on your back and place your arm down by your side.';
   static const String teaserDescription2 =
@@ -475,6 +514,7 @@ class TextConstants {
       'Bring your arms up over your head and then lay back. Repeat to complete a set';
 
   //plank rock
+  static const String plankRockDescription = 'Targets core muscles ';
   static const String plankRockDescription1 =
       'Get into a forearm plank with your shoulders in line with your elbows and forearms parallel to each other on the ground.';
   static const String plankRockDescription2 =
@@ -483,6 +523,8 @@ class TextConstants {
       'Keep your core tight. Continue to complete your set.';
 
 //high plank to pike
+  static const String highPlanktoPikeDescription =
+      'Targets lower abs, and core strenght';
   static const String highPlanktoPikeDescription1 =
       'Start in a plank position. Roll your shoulders down, away from your ears, and press into your palms.';
   static const String highPlanktoPikeDescription2 =
@@ -498,6 +540,8 @@ class TextConstants {
   //for booty squats repeat for squats
 
   //sumo squats
+  static const String sumoSquatDescription =
+      'Targets: Lower body, inner thighs, side booty';
   static const String sumoSquatsDescription1 =
       'Start in a traditional squat stance with your feet about shoulder-width apart and toes pointed forward. Clasp your hands together at your chest.';
   static const String sumoSquatsDescription2 =
@@ -524,6 +568,8 @@ class TextConstants {
       'Return to the starting position.';
 
   //donkey kicks right
+  static const String donkeyKicksDescription =
+      'Target your glutes, core, and shoulders';
   static const String donkeyKicksRightDescritption1 =
       'Assume the starting position on all fours: knees hip-width apart, hands under your shoulders, neck and spine neutral.';
   static const String donkeyKicksRightDescritption2 =
@@ -536,6 +582,8 @@ class TextConstants {
       'Return to the starting position.';
 
   //lunges
+  static const String lungesDescription =
+      'Targets: Quads, hamstrings, glutes, hips, and calves';
   static const String lungesDescription1 =
       'Start in a standing position with your feet hip-width apart.';
   static const String lungesDescription2 =
@@ -548,6 +596,8 @@ class TextConstants {
       'Then, forcefully push off from your front leg to return to the starting position.';
 
   //butt bridges
+  static const String buttBridgeDescription =
+      'Targets: Glutes, abs, and hamstrings';
   static const String buttBridgeDescription1 =
       'Tighten your abdominal and buttock muscles by pushing your low back into the ground.';
   static const String buttBridgeDescription2 =
@@ -559,6 +609,8 @@ class TextConstants {
       'Lower the hips to return to the starting position and repeat to complete your set';
 
   //jumping squats
+  static const String jumpingSquatsDescription =
+      'Targets: Butt, hips, legs, thighs';
   static const String jumpingSquatsDescription1 =
       'Stand with feet shoulder width and knees slightly bent.';
   static const String jumpingSquatsDescription2 =
@@ -612,6 +664,7 @@ class TextConstants {
       'Return to the starting position.';
 
   //side leg lift
+  static const String sideLegLiftLeftDescription = 'Builds strength in outer thighs and hip abdusctors';
   static const String sideLegLiftLeftDescription1 =
       'Lay down on your side and check that your ankles, knees, hips, shoulders, and ears are aligned.';
   static const String sideLegLiftLeftDescription2 =
