@@ -1,7 +1,7 @@
-class PathConstatnts  {
+class PathConstatnts {
   //icons
   static const String home = 'assets/icons/home_icon.png';
-   static const String analytics = 'assets/icons/analytics.png';
+  static const String analytics = 'assets/icons/analytics.png';
   static const String arrow = 'assets/icons/arrow_back.png';
   static const String eye = 'assets/icons/eye_icon.png';
   static const String facebook = 'assets/icons/facebook.png';
@@ -28,4 +28,40 @@ class PathConstatnts  {
   static const String rectangle = 'assets/icons/rectangle.png';
   static const String timeTracker = 'assets/icons/timeTracker.png';
   static const String exercise = 'assets/icons/exercise.png';
+
+  //workoutvides
+  static const String abhold = 'assets/workout_videos/ab hold.gif';
+  static const String buttBridge = 'assets/workout_videos/butt bridge.gif';
+  static const String cowPose = 'assets/workout_videos/cow pose.gif';
+  static const String crissCross = 'assets/workout_videos/criss cross.gif';
+  static const String donkeyKicks = 'assets/workout_videos/donkey kicks.gif';
+  static const String doubleLegStretch =
+      'assets/workout_videos/double leg stretch.gif';
+  static const String highKnees = 'assets/workout_videos/high knees.gif';
+  static const String jumpRope = 'assets/workout_videos/jump rope.gif';
+  static const String jumpingJacks = 'assets/workout_videos/Jumping Jacks.gif';
+  static const String legCircle = 'assets/workout_videos/leg circle.gif';
+  static const String lunges = 'assets/workout_videos/lunges.gif';
+  static const String pilates100 = 'assets/workout_videos/pilates 100.gif';
+  static const String plankLegLift = 'assets/workout_videos/plank leg lift.gif';
+  static const String plankRock = 'assets/workout_videos/plank rock.gif';
+  static const String plank = 'assets/workout_videos/plank.gif';
+  static const String reverseCrunch =
+      'assets/workout_videos/reverse crunch.gif';
+  static const String scissorKicks = 'assets/workout_videos/scissor kicks.gif';
+  static const String sideCrunch = 'assets/workout_videos/side crunch.gif';
+  static const String sideLegLift = 'assets/workout_videos/side leg lift.gif';
+  static const String sideToSideHop =
+      'assets/workout_videos/Side To Side Hops.gif';
+  static const String singleLegStretch =
+      'assets/workout_videos/single leg stretch.gif';
+  static const String squatsVideo = 'assets/workout_videos/squats.gif';
+  static const String sumoSquats = 'assets/workout_videos/sumo squats.gif';
+  static const String teaser = 'assets/workout_videos/teaser.gif';
+  static const String highLunge = 'assets/workout_videos/high lunge.gif';
+  static const String toeTouches = 'assets/workout_videos/toe touches.gif';
+
+  // workout images
+  static const String childPose =
+      'assets/images/workout_images/child pose pic.png';
 }
