@@ -59,6 +59,7 @@ class PathConstatnts {
   static const String sumoSquats = 'assets/workout_videos/sumo squats.gif';
   static const String teaser = 'assets/workout_videos/teaser.gif';
   static const String highLunge = 'assets/workout_videos/high lunge.gif';
+  static const String crunchKicks = 'assets/workout_videos/crunch kicks.gif';
   static const String toeTouches = 'assets/workout_videos/toe touches.gif';
 
   // workout images
