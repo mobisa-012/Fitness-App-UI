@@ -137,6 +137,9 @@ class TextConstants {
   static const String selectTime = "Please select reminder time";
   static const String repeating = "How often repeat";
 
+  //analytics screen
+  static const String letsCheckActivity = 'Let\'s check your activity';
+
   //workouts
   //workout minutes
   static const String yogaMinutes = '10';
@@ -149,13 +152,13 @@ class TextConstants {
 
 //Weight Loss
   static const String highKness = 'High knees';
-  static const int highKnessMin = 30 ;
+  static const int highKnessMin = 30;
   static const String squats = 'Squats';
   static const int squatsMin = 45;
   static const String jumpRope = 'Jump rope';
   static const int jumpRopeMin = 1;
   static const String highPlank = 'High plank';
-   static const int highPlankMin = 45;
+  static const int highPlankMin = 45;
   static const String mountainClimber = 'Mountain climber';
   static const int mountainClimberMin = 45;
   static const String toeTouches = 'Toe touches';
@@ -228,7 +231,7 @@ class TextConstants {
   //Thigh workouts
   static const String thighs = 'Thighs';
   static const String thighSSumoSquats = 'Sumo squats';
-  static const int  thighSSumoSquatsMin = 45;
+  static const int thighSSumoSquatsMin = 45;
   static const String thighdonkeyKicksLeft = 'Donkey kicks left';
   static const int thighdonkeyKicksThighsLeftMin = 45;
   static const String thighdonkeyKicksRight = 'Donkey kicks right';
