@@ -138,67 +138,123 @@ class TextConstants {
   static const String repeating = "How often repeat";
 
   //workouts
-  //Weight Loss
+  //workout minutes
+  static const String yogaMinutes = '10';
+  static const String cardioMinutes = '20';
+  static const String thighsMinutes = '8';
+  static const String bootyMinutes = '10';
+  static const String absMinutes = '10';
+  static const String pilatesMinutes = '15';
+  static const String fullBodyMinutes = '20';
+
+//Weight Loss
   static const String highKness = 'High knees';
+  static const String highKnessMin = '30 seconds';
   static const String squats = 'Squats';
+  static const String squatsMin = '45 seconds';
   static const String jumpRope = 'Jump rope';
+  static const String jumpRopeMin = '1 min';
   static const String highPlank = 'High plank';
+   static const String highPlankMin = '45 seconds';
   static const String mountainClimber = 'Mountain climber';
+  static const String mountainClimberMin = '45 seconds';
   static const String toeTouches = 'Toe touches';
+  static const String toeTouchesMin = '30 seconds';
 
   //Abs workouts
   static const String crunchKicks = 'Crunch kicks';
+  static const String crunchKicksMin = '45 seconds';
   static const String russianTwist = 'Russian twist';
+  static const String russianTwistMin = '45 seconds';
   static const String slowMountainClimber = 'Slow mountain climber';
+  static const String slowMountainClimberMin = '45 seconds';
   static const String abHold = 'Ab hold';
+  static const String abHoldMin = '45 seconds';
   static const String reversecrunches = 'Reverse crunches';
+  static const String reversecrunchesMin = '45 seconds';
   static const String rightSideCrunch = 'Right side crunch';
+  static const String rightSideCrunchMin = '45 seconds';
   static const String leftSideCrunch = 'Left side crunch';
+  static const String leftSideCrunchMin = '45 seconds';
 
   //Cardio workouts
   static const String cardiojumpRope = 'Jump rope';
+  static const String cardiojumpRopeMin = '1 min';
   static const String sideHop = 'Side hop';
+  static const String sideHopMin = '45 seconds';
   static const String jumpingJack = 'Jumping jacks';
+  static const String jumpingJackMin = '45 seconds';
   static const String cardioHighKnees = 'High knees';
+  static const String cardioHighKneesMin = '1 min';
 
   //pilates workouts
   static const String legCircle = 'Leg circle';
+  static const String legCircleMin = '30 seconds';
   static const String pilates100 = 'Pilates 100';
+  static const String pilates100Min = '45 seconds';
   static const String singleLegStretch = 'Single leg stretch';
+  static const String singleLegStretchMin = '45 seconds';
   static const String crissCross = 'Criss-cross';
+  static const String crissCrossMin = '45 seconds';
   static const String doubleLegStretch = 'Double leg stretch';
+  static const String doubleLegStretchMin = '45 seconds';
   static const String scissorKicks = 'Scissor kicks';
+  static const String scissorKicksNin = '45 seconds';
   static const String plankLegLift = 'Plank leg lift';
+  static const String plankLegLiftMin = '45 seconds';
   static const String teaser = 'Teaser';
+  static const String teaserMin = '30 seconds';
   static const String plankRock = 'Plank rock';
+  static const String plankRockMin = '45 seconds';
   static const String highPlanktoPike = 'Hight plank to pike';
+  static const String highPlanktoPikeMin = '30 seconds';
 
   //Booty workouts
   static const String bootySquats = 'Squats';
+  static const String bootySquatsMin = '45 seconds';
   static const String sumoSquats = 'Sumo squats';
+  static const String sumoSquatsMin = '45 secondss';
   static const String donkeyKicksLeft = 'Donkey kicks left';
+  static const String thighdonkeyKicksLeftMin = '45 seconds';
   static const String donkeyKicksRight = 'Donkey kicks right';
+  static const String thighdonkeyKicksRightMin = '45 seconds';
   static const String lunges = 'Lunges';
+  static const String lungesMin = '45 seconds';
   static const String buttBridge = 'Butt bridge';
+  static const String buttBridgeMin = '45 seconds';
   static const String jumpingSquats = 'Jumping squats';
+  static const String jumpingSquatsMin = '1 min';
 
   //Thigh workouts
   static const String thighs = 'Thighs';
   static const String thighSSumoSquats = 'Sumo squats';
+  static const String thighSSumoSquatsMin = '45 seconds';
   static const String thighdonkeyKicksLeft = 'Donkey kicks left';
+  static const String thighdonkeyKicksThighsLeftMin = '45 seconds';
   static const String thighdonkeyKicksRight = 'Donkey kicks right';
+  static const String thighdonkeyKicksThighsRightMin = '45 seconds';
   static const String sideLegLiftLeft = 'Side leg lift left';
+  static const String sideLegLiftLeftMin = '45 seconds';
   static const String sideLegLiftRight = 'Side leg lift right';
+  static const String sideLegLiftRightMin = '45 seconds';
   static const String thighSumoSquats = 'Sumo squats';
+  static const String thighSumoSquatsMin = '45 seconds';
 
   //Yoga workout
   static const String cowPose = 'Cow pose';
+  static const String cowPoseMin = '45 seconds';
   static const String childPose = 'Child pose';
+  static const String childPoseMin = '45 seconds';
   static const String warriorII = 'Warrior II';
+  static const String warriorIIMin = '45 seconds';
   static const String downwardDog = 'Downward dog';
+  static const String downwardDogMin = '45 seconds';
   static const String upwardDog = 'Upward dog';
+  static const String upwardDogMin = '45 seconds';
   static const String reverseWarrior = 'Reverse warrior';
+  static const String reverseWarriorMin = '45 seconds';
   static const String highLunge = 'High lunge';
+  static const String highLungeMin = '30 seconds';
 
   //workouts description
   //high knees
@@ -664,7 +720,8 @@ class TextConstants {
       'Return to the starting position.';
 
   //side leg lift
-  static const String sideLegLiftLeftDescription = 'Builds strength in outer thighs and hip abdusctors';
+  static const String sideLegLiftLeftDescription =
+      'Builds strength in outer thighs and hip abdusctors';
   static const String sideLegLiftLeftDescription1 =
       'Lay down on your side and check that your ankles, knees, hips, shoulders, and ears are aligned.';
   static const String sideLegLiftLeftDescription2 =
