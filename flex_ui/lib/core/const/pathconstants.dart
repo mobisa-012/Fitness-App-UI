@@ -48,6 +48,7 @@ class PathConstatnts {
   static const String plank = 'assets/workout_videos/plank.gif';
   static const String reverseCrunch =
       'assets/workout_videos/reverse crunch.gif';
+  static const String jumpingSquats = 'assets/workout_videos/jumping squats.gif';
   static const String scissorKicks = 'assets/workout_videos/scissor kicks.gif';
   static const String sideCrunch = 'assets/workout_videos/side crunch.gif';
   static const String sideLegLift = 'assets/workout_videos/side leg lift.gif';
@@ -67,6 +68,8 @@ class PathConstatnts {
   static const String warriorIIPose =
       'assets/workout_videos/warrior II pose.gif';
   static const String downwardDog = 'assets/workout_videos/downward dog.gif';
+  static const String reverseWarrior =
+      'assets/workout_videos/reverse warrior.gif';
 
   // workout images
   static const String childPose =
