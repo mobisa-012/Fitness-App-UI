@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flex_ui/core/extensions/exceptions.dart';
 import 'package:flex_ui/core/services/auth_service.dart';
