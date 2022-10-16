@@ -135,7 +135,7 @@ class HomeContent extends StatelessWidget {
                   workout: DataConstants.homeWorkoutsTopWorkouts[0],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                          workout: DataConstants.workouts[0])))),
+                          workout: DataConstants.homeWorkoutsTopWorkouts[0])))),
               const SizedBox(
                 width: 20,
               ),
@@ -144,7 +144,7 @@ class HomeContent extends StatelessWidget {
                   workout: DataConstants.homeWorkoutsTopWorkouts[1],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                          workout: DataConstants.workouts[1])))),
+                          workout: DataConstants.homeWorkoutsTopWorkouts[1])))),
               const SizedBox(
                 width: 20,
               ),
@@ -153,7 +153,7 @@ class HomeContent extends StatelessWidget {
                 workout: DataConstants.homeWorkoutsTopWorkouts[2],
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.workouts[2]))),
+                        workout: DataConstants.homeWorkoutsTopWorkouts[2]))),
               ),
               const SizedBox(
                 width: 20,
