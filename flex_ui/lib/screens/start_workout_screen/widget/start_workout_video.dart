@@ -55,6 +55,7 @@ class _StartWorkoutVideoState extends State<StartWorkoutVideo> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: _controller.value.aspectRatio,

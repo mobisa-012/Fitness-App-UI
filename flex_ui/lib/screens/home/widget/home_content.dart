@@ -124,7 +124,7 @@ class HomeContent extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        Container(
+        SizedBox(
           height: 160,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -183,7 +183,7 @@ class HomeContent extends StatelessWidget {
           const SizedBox(
           height: 15,
         ),
-        Container(
+        SizedBox(
           height: 200,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -193,7 +193,7 @@ class HomeContent extends StatelessWidget {
                 color: AppColors.pilatesContainerColor, 
                 workout: DataConstants.categoriesWorkouts[0], 
                 onTap: 
-                () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => WorkoutDetailsPage(workout: DataConstants.workouts[0])),
+                () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => WorkoutDetailsPage(workout: DataConstants.homeWorkoutsTopWorkouts[0])),
                 )),
                 const SizedBox(width: 20),
                 WorkoutCard(
@@ -201,7 +201,7 @@ class HomeContent extends StatelessWidget {
                   workout: DataConstants.categoriesWorkouts[1], 
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.workouts[2]))),
+                        workout: DataConstants.homeWorkoutsTopWorkouts[1]))),
                   ),
                 const SizedBox(width: 20),
                 WorkoutCard(
@@ -209,7 +209,7 @@ class HomeContent extends StatelessWidget {
                   workout: DataConstants.categoriesWorkouts[2], 
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.workouts[2]))),
+                        workout: DataConstants.homeWorkoutsTopWorkouts[2]))),
                   ),
                   const SizedBox(width: 20),
                   WorkoutCard(
@@ -217,7 +217,7 @@ class HomeContent extends StatelessWidget {
                     workout: DataConstants.categoriesWorkouts[3], 
                     onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.workouts[2]))),
+                        workout: DataConstants.homeWorkoutsTopWorkouts[2]))),
                     )
             ],
           ),

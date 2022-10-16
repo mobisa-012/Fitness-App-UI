@@ -3,8 +3,6 @@ import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/data/workout_data.dart';
 import 'package:flex_ui/screens/workout_details_screen/bloc/workoutdetails_bloc.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WorkoutDetailsBody extends StatelessWidget {
@@ -33,10 +31,10 @@ class WorkoutDetailsBody extends StatelessWidget {
         child: BlocBuilder<WorkoutDetailsBloc, WorkoutDetailsState>(
           builder: (context, state) {
             return GestureDetector(
-              child: Container(
+              child: const SizedBox(
                 width: 30,
                 height: 30,
-                child: const Image(image: AssetImage(PathConstatnts.arrow)),
+                child:  Image(image: AssetImage(PathConstatnts.arrow)),
               ),
               onTap: () {
                 bloc.add(BackTappedEvent());
@@ -49,7 +47,7 @@ class WorkoutDetailsBody extends StatelessWidget {
   }
 
   Widget _createImage() {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Image(
         image: AssetImage(

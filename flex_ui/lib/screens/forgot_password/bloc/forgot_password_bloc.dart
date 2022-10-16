@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:bloc/bloc.dart';
 import 'package:flex_ui/core/services/auth_service.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,7 +24,7 @@ class ForgotPasswordBloc
         await AuthService.resetPassword(emailController.text);
         yield ForgotPasswordSuccess();
       } catch (e) {
-        print('Error: ' + e.toString());
+        print('Error: $e');
         yield ForgotPasswordError(message: e.toString());
       }
     }

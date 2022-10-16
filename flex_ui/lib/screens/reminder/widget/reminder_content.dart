@@ -55,7 +55,7 @@ class ReminderContent extends StatelessWidget {
 
   Widget _createTimePicker(BuildContext context) {
     final bloc = BlocProvider.of<ReminderBloc>(context);
-    return Container(
+    return SizedBox(
       height: 250,
       child: CupertinoDatePicker(
         mode: CupertinoDatePickerMode.time,

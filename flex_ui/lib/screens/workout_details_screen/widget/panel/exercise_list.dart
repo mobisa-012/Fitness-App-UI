@@ -3,10 +3,7 @@ import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/data/exercise_data.dart';
 import 'package:flex_ui/data/workout_data.dart';
 import 'package:flex_ui/screens/workout_details_screen/bloc/workoutdetails_bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
