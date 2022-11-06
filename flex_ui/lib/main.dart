@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flex Fitness',
       theme: ThemeData(
         textTheme: const TextTheme(bodyText1: TextStyle(color: AppColors.textColor)),
-        fontFamily: 'NotoSansKR',
+        //fontFamily: 'NotoSansKR',
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
