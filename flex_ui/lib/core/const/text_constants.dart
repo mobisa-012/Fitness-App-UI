@@ -141,6 +141,10 @@ class TextConstants {
   static const String letsCheckActivity = 'Let\'s check your activity';
   static const String water = 'Water';
   static const String bodyComposition = 'Body composition';
+  static const String finished = 'Finished';
+  static const String workouts = 'Workouts';
+  static const String inProgress = 'In progress';
+  static const String minutes = 'minutes';
 
   //workouts
   //workout minutes
