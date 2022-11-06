@@ -139,6 +139,8 @@ class TextConstants {
 
   //analytics screen
   static const String letsCheckActivity = 'Let\'s check your activity';
+  static const String water = 'Water';
+  static const String bodyComposition = 'Body composition';
 
   //workouts
   //workout minutes
