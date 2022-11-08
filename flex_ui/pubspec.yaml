@@ -52,12 +52,12 @@ flutter:
      - assets/workout_videos/
 
   fonts:
-     - family: NotoSansKR
+     - family: Roboto
        fonts:
-         - asset: assets/fonts/NotoSansKR/NotoSansKR-Regular.otf
-         - asset: assets/fonts/NotoSansKR/NotoSansKR-Medium.otf
+         - asset: assets/fonts/Roboto-Black.ttf
+         - asset: assets/fonts/Roboto-BlackItalic.ttf
            weight: 500
-         - asset: assets/fonts/NotoSansKR/NotoSansKR-Bold.otf
+         - asset: assets/fonts/Roboto-Bold.otf
            weight: 700
   #         style: italic
   #   - family: Trajan Pro
