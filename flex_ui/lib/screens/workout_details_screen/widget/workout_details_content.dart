@@ -2,14 +2,13 @@ import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/data/workout_data.dart';
 import 'package:flex_ui/screens/workout_details_screen/widget/panel/workout_details_panel.dart';
 import 'package:flex_ui/screens/workout_details_screen/widget/workout_details_body.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class WorkoutDetailsContent extends StatelessWidget {
   final WorkoutData workout;
 
-  const WorkoutDetailsContent({Key? key, required this.workout})
-      : super(key: key);
+  const WorkoutDetailsContent({super.key, required this.workout});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +16,11 @@ class WorkoutDetailsContent extends StatelessWidget {
       height: double.infinity,
       width: double.infinity,
       color: AppColors.homeBackground,
-      child: _createSlidingPanel(context),
+      child: _createSlidingUpPanel(context),
     );
   }
 
-  Widget _createSlidingPanel(BuildContext context) {
+  Widget _createSlidingUpPanel(BuildContext context) {
     return SlidingUpPanel(
       panel: WorkoutDetailsPanel(workout: workout),
       body: WorkoutDetailsBody(workout: workout),
@@ -29,9 +28,9 @@ class WorkoutDetailsContent extends StatelessWidget {
       maxHeight: MediaQuery.of(context).size.height * 0.87,
       isDraggable: true,
       borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(30),
-        topRight: Radius.circular(30)
-        ),
+        topLeft: Radius.circular(50),
+        topRight: Radius.circular(50),
+      ),
     );
   }
 }

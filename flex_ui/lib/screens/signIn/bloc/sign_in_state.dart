@@ -6,24 +6,28 @@ abstract class SignInState {
 
 class SignInInitial extends SignInState {}
 
+class SignInButtonEnableChangedState extends SignInState {
+  final bool isEnabled;
 
-// ignore: must_be_immutable
-class SignInButtonEnabledChangedState extends SignInState {
-  bool isEnabled;
-  SignInButtonEnabledChangedState({required this.isEnabled});
+  const SignInButtonEnableChangedState({
+    required this.isEnabled,
+  });
 }
 
-class LoadingState extends SignInState {}
-
-class NextTabBarPageState extends SignInState {}
-
-class SignInErrorState extends SignInState {
-  final String message;
-  const SignInErrorState ({required this.message});
-}
+class ShowErrorState extends SignInState {}
 
 class NextForgotPasswordPageState extends SignInState {}
 
-class NextSignUpState extends SignInState {}
+class NextSignUpPageState extends SignInState {}
 
-class ShowErrorState extends SignInState {}
+class NextTabBarPageState extends SignInState {}
+
+class ErrorState extends SignInState {
+  final String message;
+
+  const ErrorState({
+    required this.message,
+  });
+}
+
+class LoadingState extends SignInState {}

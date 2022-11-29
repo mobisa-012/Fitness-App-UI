@@ -35,14 +35,14 @@ class _MyAppState extends State<MyApp> {
     // TODO: implement initState
     super.initState();
     const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('app_icon');
+        AndroidInitializationSettings('@mipmap/ic_launcher');
     const IOSInitializationSettings initializationSettingsIOS =
-         IOSInitializationSettings();
+        IOSInitializationSettings();
     const InitializationSettings initializationSettings =
-         InitializationSettings(
+        InitializationSettings(
             android: initializationSettingsAndroid,
             iOS: initializationSettingsIOS);
-            
+
     tz.initializeTimeZones();
 
     flutterLocalNotificationsPlugin.initialize(initializationSettings,
@@ -52,16 +52,17 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     final isLoggedIn = FirebaseAuth.instance.currentUser != null;
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flex Fitness',
       theme: ThemeData(
-        textTheme: const TextTheme(bodyText1: TextStyle(color: AppColors.textColor)),
-        //fontFamily: 'NotoSansKR',
-        scaffoldBackgroundColor: Colors.white,
-        visualDensity: VisualDensity.adaptivePlatformDensity
-      ),
-      home: isLoggedIn ? const TabBarPage() : const OnboardingPage(),
+          fontFamily: 'Roboto',
+          textTheme:
+              const TextTheme(bodyText1: TextStyle(color: AppColors.textColor)),
+          //fontFamily: 'NotoSansKR',
+          scaffoldBackgroundColor: Colors.white,
+          visualDensity: VisualDensity.adaptivePlatformDensity),
+      home: isLoggedIn ? const TabBarPage() : OnboardingPage(),
     );
   }
 

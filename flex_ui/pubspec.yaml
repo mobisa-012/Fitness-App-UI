@@ -57,7 +57,7 @@ flutter:
          - asset: assets/fonts/Roboto-Black.ttf
          - asset: assets/fonts/Roboto-BlackItalic.ttf
            weight: 500
-         - asset: assets/fonts/Roboto-Bold.otf
+         - asset: assets/fonts/Roboto-Bold.ttf
            weight: 700
   #         style: italic
   #   - family: Trajan Pro

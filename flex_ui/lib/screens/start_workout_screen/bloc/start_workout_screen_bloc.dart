@@ -5,10 +5,13 @@ part 'start_workout_screen_event.dart';
 part 'start_workout_screen_state.dart';
 
 class StartWorkoutBloc extends Bloc<StartWorkoutEvent, StartWorkoutState> {
-  StartWorkoutBloc() : super(StartWorkoutInitial());
+  StartWorkoutBloc() : super(StartWorkoutInitial()) {
+    on<BackTappedEvent>((event, emit) async {
+      emit(BackTappedState());
+    });
+  }
 
   int time = 0;
-
   Stream<StartWorkoutState> mapEventToState(StartWorkoutEvent event) async* {
     if (event is BackTappedEvent) {
       yield BackTappedState();

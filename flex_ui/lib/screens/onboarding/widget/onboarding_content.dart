@@ -16,8 +16,14 @@ class OnboardingContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(flex: 4, child: _createPageView(bloc.pageController, bloc)),
-          Expanded(flex: 2, child: _createStatic(bloc)),
+          Expanded(
+            flex: 3,
+            child: _createPageView(bloc.pageController, bloc),
+          ),
+          Expanded(
+            flex: 2,
+            child: _createStatic(bloc),
+          ),
         ],
       ),
     );
@@ -47,8 +53,9 @@ class OnboardingContent extends StatelessWidget {
               dotsCount: 3,
               position: bloc.pageIndex.toDouble(),
               decorator: const DotsDecorator(
-                  color: Colors.grey,
-                  activeColor: AppColors.weightLossContainerColor),
+                color: Colors.grey,
+                activeColor: AppColors.onboardingColor,
+              ),
             );
           },
         ),
@@ -58,33 +65,32 @@ class OnboardingContent extends StatelessWidget {
           builder: (context, state) {
             final percent = _getPercent(bloc.pageIndex);
             return TweenAnimationBuilder<double>(
-              tween: Tween(begin: 0, end: percent),
-              duration: const Duration(seconds: 1),
-              builder: (context, value, _) => CircularPercentIndicator(
-                radius: 110,
-                backgroundColor: AppColors.weightLossContainerColor,
-                progressColor: Colors.white,
-                percent: 1 - value,
-                center: Material(
-                  shape: const CircleBorder(),
-                  color: AppColors.weightLossContainerColor,
-                  child: RawMaterialButton(
-                    shape: const CircleBorder(),
-                    onPressed: () {
-                      bloc.add(PageChangedEvent());
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.all(24),
-                      child: Icon(
-                        Icons.east_rounded,
-                        size: 38,
-                        color: Colors.white,
+                tween: Tween<double>(begin: 0, end: percent),
+                duration: const Duration(seconds: 1),
+                builder: (context, value, _) => CircularPercentIndicator(
+                      radius: 90,
+                      backgroundColor: AppColors.onboardingColor,
+                      progressColor: Colors.white,
+                      percent: 1 - value,
+                      center: Material(
+                        shape: const CircleBorder(),
+                        color: AppColors.onboardingColor,
+                        child: RawMaterialButton(
+                          shape: const CircleBorder(),
+                          onPressed: () {
+                            bloc.add(PageChangedEvent());
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(20.0),
+                            child: Icon(
+                              Icons.east_rounded,
+                              size: 30.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-              ),
-            );
+                    ));
           },
         ),
         const SizedBox(height: 30),

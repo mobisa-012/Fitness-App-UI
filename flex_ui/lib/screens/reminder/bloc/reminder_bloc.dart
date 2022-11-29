@@ -2,17 +2,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
-
 part 'reminder_event.dart';
 part 'reminder_state.dart';
 
 class ReminderBloc extends Bloc<ReminderEvent, ReminderState> {
-  ReminderBloc() : super(ReminderInitial());
+  ReminderBloc() : super(ReminderInitial()) {
+    on<ReminderNotificationTimeEvent>(
+      (event, emit) => ReminderNotificationState(),
+    );
+    on<RepeatDaySelectedEvent>(
+      (event, emit) => RepeatDaySelectedState(index: selectRepeatDayIndex),
+    );
+    on<OnSaveTappedEvent>(
+      (event, emit) => OnSaveTappedState(),
+    );
+  }
 
   int? selectRepeatDayIndex;
   late DateTime reminderTime;
   int? dayTime;
-
 
   Stream<ReminderState> mapEventToState(
     ReminderEvent event,
@@ -59,7 +67,7 @@ class ReminderBloc extends Bloc<ReminderEvent, ReminderState> {
     final now = tz.TZDateTime.now(tz.local);
     var timeZoneOffest = DateTime.now().timeZoneOffset;
     final scheduleDate = tz.TZDateTime.utc(now.year, now.month, now.day)
-        .add(Duration(hours: dateTime.hour, minutes: dateTime.minute))
+        .add(Duration(hours: dateTime.hour, seconds: dateTime.minute))
         .subtract(Duration(hours: timeZoneOffest.inHours));
 
     return scheduleDate.isBefore(now)
@@ -99,7 +107,7 @@ class ReminderBloc extends Bloc<ReminderEvent, ReminderState> {
         ];
       case 2:
         return [DateTime.saturday, DateTime.sunday];
-        case 3:
+      case 3:
         return [DateTime.monday];
       case 4:
         return [DateTime.tuesday];

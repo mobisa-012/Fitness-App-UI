@@ -1,16 +1,16 @@
 class ExerciseData {
   final String title;
-  final int minutes;
+  final int seconds;
   final double progress;
-  final String image;
+  final String pic;
   final String video;
   final String description;
   final List<String> steps;
 
   ExerciseData(
       {required this.description,
-      required this.image,
-      required this.minutes,
+      required this.pic,
+      required this.seconds,
       required this.progress,
       required this.title,
       required this.video,
@@ -18,6 +18,6 @@ class ExerciseData {
 
   @override
   String toString() {
-    return 'ExerciseData(title: $title, minutes: $minutes, progress: $progress, video: $video)';
+    return 'ExerciseData(title: $title, seconds: $seconds, progress: $progress, video: $video)';
   }
 }

@@ -18,20 +18,19 @@ class SignInContent extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: Colors.white,
+      color: AppColors.homeBackground,
       child: Stack(
         children: [
           _createMainData(context),
           BlocBuilder<SignInBloc, SignInState>(
             buildWhen: (_, currState) =>
                 currState is LoadingState ||
-                currState is SignInErrorState ||
+                currState is ErrorState ||
                 currState is NextTabBarPageState,
             builder: (context, state) {
               if (state is LoadingState) {
                 return _createLoading();
-              } else if (state is SignInErrorState ||
-                  state is NextTabBarPageState) {
+              } else if (state is ErrorState || state is NextTabBarPageState) {
                 return const SizedBox();
               }
               return const SizedBox();
@@ -48,24 +47,22 @@ class SignInContent extends StatelessWidget {
       child: SingleChildScrollView(
         child: SizedBox(
           height: height - 30 - MediaQuery.of(context).padding.bottom,
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const SizedBox(
-              height: 20,
-            ),
-            _createHeader(),
-            const SizedBox(height: 50),
-            _createForm(context),
-            const SizedBox(
-              height: 20,
-            ),
-            _createForgotPasswordButton(context),
-            const SizedBox(height: 40),
-            _createSignInButton(context),
-            const Spacer(),
-            _createDoNotHaveAccountText(context),
-            const SizedBox(height: 30),
-          ]),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 20),
+              _createHeader(),
+              const SizedBox(height: 50),
+              _createForm(context),
+              const SizedBox(height: 20),
+              _createForgotPasswordButton(context),
+              const SizedBox(height: 40),
+              _createSignInButton(context),
+              const Spacer(),
+              _createDoNotHaveAccountText(context),
+              const SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );
@@ -80,49 +77,50 @@ class SignInContent extends StatelessWidget {
       child: Text(
         TextConstants.signIn,
         style: TextStyle(
-            color: AppColors.loadingBlack,
-            fontSize: 24,
-            fontWeight: FontWeight.bold),
+          color: AppColors.textColor,
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
 
   Widget _createForm(BuildContext context) {
     final bloc = BlocProvider.of<SignInBloc>(context);
-    return BlocBuilder(
+    return BlocBuilder<SignInBloc, SignInState>(
       buildWhen: (_, currState) => currState is ShowErrorState,
       builder: (context, state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             FitnessTextField(
-                title: TextConstants.email,
-                textInputAction: TextInputAction.next,
-                keyboardType: TextInputType.emailAddress,
-                placeholder: TextConstants.emailPlaceholder,
-                errorText: TextConstants.emailErrorText,
-                controller: bloc.emailController,
-                isError: state is ShowErrorState
-                    ? !ValidationService.email(bloc.emailController.text)
-                    : false,
-                onTextChanged: () {
-                  bloc.add(OnTextChangedEvent());
-                }),
-            const SizedBox(
-              height: 20,
+              title: TextConstants.email,
+              textInputAction: TextInputAction.next,
+              keyboardType: TextInputType.emailAddress,
+              placeholder: TextConstants.emailPlaceholder,
+              controller: bloc.emailController,
+              errorText: TextConstants.emailErrorText,
+              isError: state is ShowErrorState
+                  ? !ValidationService.email(bloc.emailController.text)
+                  : false,
+              onTextChanged: () {
+                bloc.add(OnTextChangeEvent());
+              },
             ),
+            const SizedBox(height: 20),
             FitnessTextField(
-                title: TextConstants.password,
-                placeholder: TextConstants.passwordPlaceholder,
-                obscureText: true,
-                isError: state is ShowErrorState
-                    ? !ValidationService.password(bloc.passwordController.text)
-                    : false,
-                errorText: TextConstants.passwordErrorText,
-                controller: bloc.passwordController,
-                onTextChanged: () {
-                  bloc.add(OnTextChangedEvent());
-                })
+              title: TextConstants.password,
+              placeholder: TextConstants.passwordPlaceholderSignIn,
+              controller: bloc.passwordController,
+              errorText: TextConstants.passwordErrorText,
+              isError: state is ShowErrorState
+                  ? !ValidationService.password(bloc.passwordController.text)
+                  : false,
+              obscureText: true,
+              onTextChanged: () {
+                bloc.add(OnTextChangeEvent());
+              },
+            ),
           ],
         );
       },
@@ -137,9 +135,10 @@ class SignInContent extends StatelessWidget {
         child: Text(
           TextConstants.forgotPassword,
           style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: AppColors.weightLossContainerColor),
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: AppColors.onboardingColor,
+          ),
         ),
       ),
       onTap: () {
@@ -153,21 +152,22 @@ class SignInContent extends StatelessWidget {
     final bloc = BlocProvider.of<SignInBloc>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: BlocBuilder(
-          buildWhen: (_, currState) =>
-              currState is SignInButtonEnabledChangedState,
-          builder: (context, state) {
-            return FitnessButton(
-              title: TextConstants.signIn,
-              isEnabled: state is SignInButtonEnabledChangedState
-                  ? state.isEnabled
-                  : false,
-              onTap: () {
-                FocusScope.of(context).unfocus();
-                bloc.add(SignInTappedEvent());
-              },
-            );
-          }),
+      child: BlocBuilder<SignInBloc, SignInState>(
+        buildWhen: (_, currState) =>
+            currState is SignInButtonEnableChangedState,
+        builder: (context, state) {
+          return FitnessButton(
+            title: TextConstants.signIn,
+            isEnabled: state is SignInButtonEnableChangedState
+                ? state.isEnabled
+                : false,
+            onTap: () {
+              FocusScope.of(context).unfocus();
+              bloc.add(SignInTappedEvent());
+            },
+          );
+        },
+      ),
     );
   }
 
@@ -176,22 +176,26 @@ class SignInContent extends StatelessWidget {
     return Center(
       child: RichText(
         text: TextSpan(
-            text: TextConstants.doNotHaveAnAcount,
-            style: const TextStyle(
-              color: AppColors.loadingBlack, 
-              fontSize: 18),
-            children: [
-              TextSpan(
-                  text: TextConstants.signUp,
-                  style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.loadingBlack),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      bloc.add(SignUpTappedEvent());
-                    })
-            ]),
+          text: TextConstants.doNotHaveAnAcount,
+          style: const TextStyle(
+            color: AppColors.textColor,
+            fontSize: 18,
+          ),
+          children: [
+            TextSpan(
+              text: " ${TextConstants.signUp}",
+              style: const TextStyle(
+                color: AppColors.onboardingColor,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  bloc.add(SignUpTappedEvent());
+                },
+            ),
+          ],
+        ),
       ),
     );
   }

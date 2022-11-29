@@ -35,13 +35,13 @@ class TabBarPage extends StatelessWidget {
     final bloc = BlocProvider.of<TabBarPageBloc>(context);
     return BottomNavigationBar(
       currentIndex: bloc.currentIndex,
-      fixedColor: AppColors.weightLossContainerColor,
+      fixedColor: AppColors.categoriesWorkoutsTextColor,
       items: [
         BottomNavigationBarItem(
             icon: Image(
               image: const AssetImage(PathConstatnts.home),
               color: bloc.currentIndex == 0
-                  ? AppColors.weightLossContainerColor
+                  ? AppColors.onboardingColor
                   : null,
             ),
             label: TextConstants.home),
@@ -49,18 +49,18 @@ class TabBarPage extends StatelessWidget {
             icon: Image(
               image: const AssetImage(PathConstatnts.analytics),
               color: bloc.currentIndex == 1
-                  ? AppColors.weightLossContainerColor
+                  ? AppColors.onboardingColor
                   : null,
             ),
-            label: TextConstants.home),
+            label: TextConstants.analytics),
         BottomNavigationBarItem(
             icon: Image(
-              image: const AssetImage(PathConstatnts.settings),
+              image: const AssetImage(PathConstatnts.account),
               color: bloc.currentIndex == 2
-                  ? AppColors.weightLossContainerColor
+                  ? AppColors.onboardingColor
                   : null,
             ),
-            label: TextConstants.home),
+            label: TextConstants.me),
       ],
       onTap: (index) {
         bloc.add(TabBarItemTappedEvent(index: index));

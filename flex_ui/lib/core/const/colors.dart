@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 class AppColors {
+  static const onboardingColor = Color.fromARGB(187, 97, 16, 247);
   static const loadingBlack = Color(0x80000000);
   static const disabledColor = Color(0xFFE1E1E5);
   static const textFieldBorder = Color(0xFFB9BBC5);
@@ -13,15 +14,13 @@ class AppColors {
   static const topWorkoutsandCategoriesColor =
       Color.fromARGB(129, 255, 255, 255);
   static const textColor = Color.fromARGB(255, 7, 7, 7);
-  static const categoriesWorkoutsTextColor = Color(0XFFffffff);
+  static const categoriesWorkoutsTextColor = Color.fromARGB(160, 255, 255, 255);
   static const weightLossContainerColor = Color.fromARGB(255, 102, 197, 235);
   static const thighsContainerColor = Color.fromARGB(255, 194, 158, 240);
   static const absContainerColor = Color.fromARGB(255, 243, 136, 243);
   static const yogaContainerColor = Color.fromARGB(255, 65, 115, 161);
-  static const pilatesContainerColor =
-      Color.fromARGB(188, 219, 134, 240);
-  static const bootyTrainingContainerColor =
-      Color(0xFFaeacf9);
+  static const pilatesContainerColor = Color.fromARGB(188, 219, 134, 240);
+  static const bootyTrainingContainerColor = Color(0xFFaeacf9);
 
   //Analytics Page
   static const stepsCountColor = Color.fromARGB(255, 250, 68, 235);

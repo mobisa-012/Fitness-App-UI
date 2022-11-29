@@ -5,7 +5,14 @@ part 'onboarding_event.dart';
 part 'onboarding_state.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  OnboardingBloc() : super(OnboardingInitial());
+  OnboardingBloc() : super(OnboardingInitial()) {
+    on<PageSwipedEvent>((event, emit) async {
+      emit(PageChangedState(counter: pageIndex));
+    });
+    on<PageChangedEvent>((event, emit) async {
+      emit(NextScreenState());
+    });
+  }
 
   int pageIndex = 0;
 

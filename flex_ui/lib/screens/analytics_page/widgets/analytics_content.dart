@@ -25,17 +25,17 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
   double? resultBMI;
   String message = 'Enter your weight and height';
 
-   void bmiresult() async {
+  void bmiresult() async {
     final heightValue = height;
     final double heightSquare = heightValue * heightValue;
     final weightValue = weight;
-    
+
     setState(() {
       resultBMI = weightValue / heightSquare;
       if (resultBMI! < 18.5) {
         message = 'You\'re underweight';
       } else if (resultBMI! < 25) {
-        message = 'Your body is fine';
+        message = 'You\'re healthy';
       } else if (resultBMI! < 30) {
         message = 'You are overweight';
       } else {
@@ -43,6 +43,7 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
       }
     });
   }
+
   void incrementWater() {
     setState(() {
       water++;
@@ -72,7 +73,7 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
         children: [
           _createProfileData(context),
           const SizedBox(
-            height: 35,
+            height: 20,
           ),
           const Analytics(),
           const SizedBox(
@@ -89,9 +90,9 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
 
   Widget _createProfileData(BuildContext context) {
     final User? user = FirebaseAuth.instance.currentUser;
-    final displayName = user?.displayName ?? 'Ni username';
+    final displayName = user?.displayName ?? 'No username';
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -100,13 +101,13 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
               Text(
                 'Hey, $displayName',
                 style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               const Text(
                 TextConstants.letsCheckActivity,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
             ],
           ),
@@ -119,7 +120,7 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
                       ? const CircleAvatar(
                           backgroundImage:
                               AssetImage(PathConstatnts.profileAvatar),
-                          radius: 60,
+                          radius: 40,
                         )
                       : CircleAvatar(
                           radius: 25,
@@ -128,14 +129,14 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
                               placeholder: PathConstatnts.profileAvatar,
                               image: photoUrl,
                               fit: BoxFit.cover,
-                              width: 200,
+                              width: 180,
                               height: 120,
                             ),
                           ),
                         ),
                   onTap: () async {
                     await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => const EditAccountScreen()));
+                        builder: (_) =>  const EditAccountScreen()));
                     BlocProvider.of<AnalyticsPageBloc>(context)
                         .add(ReloadImageEvent());
                   },
@@ -147,10 +148,11 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
   }
 
   Widget _createMetrics(BuildContext context) {
-    int weight = 0;
-    double height = 80;
+  //int weight = 50;
+  //double height = 1.0;
     return Column(
       children: [
+        //water container
         Container(
           width: double.infinity,
           margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -158,13 +160,13 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: AppColors.homeBackground,
-              boxShadow: [
-                BoxShadow(
-                    color:
-                        AppColors.categoriesWorkoutsTextColor.withOpacity(0.12),
-                    blurRadius: 5.0,
-                    spreadRadius: 1.1)
-              ]),
+            boxShadow: [
+              BoxShadow(
+                  color: AppColors.textColor.withOpacity(0.1),
+                  blurRadius: 5.0,
+                  spreadRadius: 1.1),
+            ],
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -182,11 +184,12 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
                     height: 5,
                   ),
                   Text(
-                    '$water ' 'glasses',
+                    '$water ' 'glass',
                     style: const TextStyle(
                         fontSize: 15,
+                        fontFamily: 'Roboto',
                         fontWeight: FontWeight.w200,
-                        color: AppColors.textColor),
+                        color: Colors.blue),
                   )
                 ],
               ),
@@ -195,7 +198,7 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
                   GestureDetector(
                     onTap: incrementWater,
                     child: const Icon(
-                      Icons.remove,
+                      Icons.add,
                       size: 25,
                       color: Colors.blue,
                     ),
@@ -214,16 +217,17 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 15,
         ),
+        //weight picker
         Center(
           child: Container(
-            height: 150,
+            height: 200,
             width: 300,
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.black12,
+              borderRadius: BorderRadius.circular(25),
+              color: Colors.black12.withOpacity(0.1),
             ),
             child: Column(
               children: [
@@ -233,20 +237,18 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
                     Text(
                       'Weight (kg)',
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
                 Center(
-                  child: NumberPicker(
-                    value: weight,
-                    minValue: 10,
-                    maxValue: 150,
-                    onChanged: (value) => setState(() {
-                      weight = value;
-                    }),
+                    child: NumberPicker(
+                      value: weight,
+                      minValue: 10,
+                      maxValue: 120,
+                      onChanged: (value) => setState(() => weight = value),
+                    ),
                   ),
-                )
               ],
             ),
           ),
@@ -257,24 +259,36 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
         //container showing weight
         Container(
           padding: const EdgeInsets.all(8),
+          height: 50,
           width: double.infinity,
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: AppColors.weightLossContainerColor),
+            borderRadius: BorderRadius.circular(10),
+            color: AppColors.homeBackground,
+            boxShadow: [
+              BoxShadow(
+                  color: AppColors.textColor.withOpacity(0.1),
+                  blurRadius: 5.0,
+                  spreadRadius: 1.1),
+            ],
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
                 'Your weight is',
                 style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Roboto',
                     color: AppColors.textColor),
               ),
               Text(
                 '$weight kg',
                 style: const TextStyle(
-                  color: AppColors.homeBackground,
+                  color: AppColors.textColor,
+                  fontSize: 15,
+                  fontFamily: 'Roboto'
                 ),
               )
             ],
@@ -283,48 +297,59 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
         const SizedBox(
           height: 10,
         ),
+        //slider height picker
         Slider(
-            value: height,
-            activeColor: AppColors.weightLossContainerColor,
-            inactiveColor: Colors.grey.withOpacity(0.5),
-            max: 250,
-            divisions: 20,
-            label: height.round().toString(),
-            onChanged: (double value) {
-              setState(() {
-                height = value;
-              });
-            }),
+                value: height,
+                activeColor: Colors.blueAccent,
+                inactiveColor: Colors.grey.withOpacity(0.5),
+                max: 2.0,
+                min: 1.0,
+                divisions: 20,
+                //label: height.round().toString(),
+                onChanged: (value) {
+                  setState(() {
+                    height = value;
+                  });
+                }),
         //container showing height
         Container(
           width: double.infinity,
           padding: const EdgeInsets.all(10),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.lightBlueAccent.withOpacity(0.5)),
+            borderRadius: BorderRadius.circular(10),
+            color: AppColors.homeBackground,
+            boxShadow: [
+              BoxShadow(
+                  color: AppColors.textColor.withOpacity(0.1),
+                  blurRadius: 5.0,
+                  spreadRadius: 1.1),
+            ],
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
                 'Your height is',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400,fontFamily: 'Roboto'),
               ),
               Text(
-                '$height cm',
+                '$height m',
                 style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                    const TextStyle(fontSize: 15, fontWeight: FontWeight.w400,fontFamily: 'Roboto'),
               ),
             ],
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
+        //know your BMI Button
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.lightBlueAccent,
-                elevation: 0
-              ),
+            backgroundColor: Colors.blue,
+            elevation: 0,
+          ),
           onPressed: bmiresult,
           child: const Text(
             'Know your BMI',
@@ -334,24 +359,23 @@ class _AnalyticsContentState extends State<AnalyticsContent> {
                 fontStyle: FontStyle.italic),
           ),
         ),
+        const SizedBox(
+          height: 10,
+        ),
         Text(
-              resultBMI == null
-                  ? 'No BMI result'
-                  : resultBMI!.toStringAsFixed(2),
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              message,
-              textAlign: TextAlign.end,
-              style: const TextStyle(
-                  fontSize: 15,
-                  color: Colors.black54,
-                  fontWeight: FontWeight.w700),
-            )
+          resultBMI == null ? 'No BMI result' : resultBMI!.toStringAsFixed(2),
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headline6,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          message,
+          textAlign: TextAlign.end,
+          style: const TextStyle(
+              fontSize: 14, color: Colors.black54, fontWeight: FontWeight.w700),
+        )
       ],
     );
   }

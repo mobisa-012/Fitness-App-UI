@@ -9,7 +9,7 @@ class TextConstants {
   static const String onboarding2Description =
       'Workout programs by professional trainers';
   static const String onboarding3Description =
-      'Enjoy the program fully and stay healhty !!';
+      'Enjoy the program fully and stay healthy !!';
 
   //forgot password
   static const passwordReset = 'Password Reset';
@@ -52,15 +52,16 @@ class TextConstants {
   static const String home = 'Home';
   static const String welcome = 'Welcome';
   static const String save = 'Save';
+  static const String me = 'Me';
   //weightlosscard
   static const String topWorkouts = 'Top Workouts 💪';
   static const String weightLossTraining = 'Weight Loss Training';
-  static const String fullBodyWorkout = 'Full Body Workout';
-  static const String time = '40 min';
+  static const String fullBodyWorkout = 'Full Body';
+  static const String time = 'Time';
   static const String calories = '350 Cal';
   //categoriescard
   static const String categories = 'Categories';
-  static const String abs = 'Abs Workout';
+  static const String abs = 'Abs';
   static const String yoga = 'Yoga';
   static const String strengthTraing = 'Strength Training';
   static const String functionalTraining = 'Functional Training';
@@ -138,23 +139,23 @@ class TextConstants {
   static const String repeating = "How often repeat";
 
   //analytics screen
-  static const String letsCheckActivity = 'Let\'s check your activity';
+  static const String letsCheckActivity = 'Let\'s get started';
   static const String water = 'Water';
   static const String bodyComposition = 'Body composition';
   static const String finished = 'Finished';
   static const String workouts = 'Workouts';
   static const String inProgress = 'In progress';
-  static const String minutes = 'minutes';
+  static const String seconds = 'seconds';
 
   //workouts
-  //workout minutes
-  static const String yogaMinutes = '10';
-  static const String cardioMinutes = '20';
-  static const String thighsMinutes = '8';
-  static const String bootyMinutes = '10';
-  static const String absMinutes = '10';
-  static const String pilatesMinutes = '15';
-  //static const String fullBodyMinutes = '20';
+  //workout seconds
+  static const String yogaseconds = '30';
+  static const String cardioseconds = '30';
+  static const String thighsseconds = '30';
+  static const String bootyseconds = '30';
+  static const String absseconds = '30';
+  static const String pilatesseconds = '30';
+  //static const String fullBodyseconds = '20';
 
 //Weight Loss
   static const String highKness = 'High knees';
@@ -188,13 +189,13 @@ class TextConstants {
 
   //Cardio workouts
   static const String cardiojumpRope = 'Jump rope';
-  static const int cardiojumpRopeMin = 1;
+  static const int cardiojumpRopeMin = 60;
   static const String sideHop = 'Side hop';
   static const int sideHopMin = 45;
   static const String jumpingJack = 'Jumping jacks';
   static const int jumpingJackMin = 45;
   static const String cardioHighKnees = 'High knees';
-  static const int cardioHighKneesMin = 1;
+  static const int cardioHighKneesMin = 60;
 
   //pilates workouts
   static const String legCircle = 'Leg circle';
@@ -232,7 +233,7 @@ class TextConstants {
   static const String buttBridge = 'Butt bridge';
   static const int buttBridgeMin = 45;
   static const String jumpingSquats = 'Jumping squats';
-  static const int jumpingSquatsMin = 1;
+  static const int jumpingSquatsMin = 60;
 
   //Thigh workouts
   static const String thighs = 'Thighs';
@@ -294,7 +295,7 @@ class TextConstants {
 
   //jump rope
   static const String jumpRopeDescription =
-      'Jumping rope is one of the most effective exercises for burning calories, building endurance & strength in as little as 20 minutes.';
+      'Jumping rope is one of the most effective exercises for burning calories, building endurance & strength in as little as 20 seconds.';
   static const String jumpRopeDescription1 =
       'Keep your feet close together when jumping';
   static const String jumpRopeDescription2 =
@@ -797,7 +798,7 @@ class TextConstants {
   static const String childPoseDescription3 =
       'Keeping palms upward, relax your arms beside your body.';
   static const String childPoseDescription4 =
-      'Inhale and exhale for 30 seconds to a few minutes, coz it\'s a resting pose.';
+      'Inhale and exhale for 30 seconds to a few seconds, coz it\'s a resting pose.';
   static const String childPoseDescription5 = 'Child pose';
   static const String childPoseDescription6 = 'Child pose';
 

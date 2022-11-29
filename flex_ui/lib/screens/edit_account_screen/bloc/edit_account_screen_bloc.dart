@@ -10,7 +10,6 @@ part 'edit_account_screen_state.dart';
 class EditAccountBloc extends Bloc<EditAccountEvent, EditAccountState> {
   EditAccountBloc() : super(EditAccountInitial());
 
-
   Stream<EditAccountState> mapEventToState(
     EditAccountEvent event,
   ) async* {

@@ -6,10 +6,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'workoutdetails_event.dart';
 part 'workoutdetails_state.dart';
 
-
-class WorkoutDetailsBloc extends Bloc<WorkoutDetailsEvent, WorkoutDetailsState> {
+class WorkoutDetailsBloc
+    extends Bloc<WorkoutDetailsEvent, WorkoutDetailsState> {
   final WorkoutData workout;
-  WorkoutDetailsBloc({required this.workout}) : super(WorkoutDetailsInitial());
+  WorkoutDetailsBloc({required this.workout}) : super(WorkoutDetailsInitial()) {
+    on<BackTappedEvent>((event, emit) async {
+      emit(BackTappedState());
+    });
+    on<WorkoutExerciseCellTappedEvent>((event, emit) async {
+      emit(WorkoutExerciseCellTappedState(
+          currentExercise: event.currentExercise,
+          nextExercise: event.nextExercise));
+    });
+  }
 
   Stream<WorkoutDetailsState> mapEventToState(
     WorkoutDetailsEvent event,

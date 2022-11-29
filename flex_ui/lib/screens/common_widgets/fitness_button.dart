@@ -19,7 +19,7 @@ class FitnessButton extends StatelessWidget {
       height: 55,
       decoration: BoxDecoration(
         color: isEnabled
-            ? AppColors.weightLossContainerColor
+            ? AppColors.onboardingColor
             : AppColors.disabledColor,
         borderRadius: BorderRadius.circular(100),
       ),

@@ -3,17 +3,18 @@ import 'package:flex_ui/core/const/data_constants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
 import 'package:flex_ui/screens/reminder/bloc/reminder_bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ReminderContent extends StatelessWidget {
-  const ReminderContent({super.key});
+  const ReminderContent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: AppColors.homeBackground,
+      color: Colors.white,
       child: _createDetailedReminder(context),
     );
   }
@@ -27,20 +28,14 @@ class ReminderContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _createSelectTime(),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               _createTimePicker(context),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               _createRepeating(),
-              const SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
               _createDayRepeating(context),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -49,7 +44,10 @@ class ReminderContent extends StatelessWidget {
   Widget _createSelectTime() {
     return const Text(
       TextConstants.selectTime,
-      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+      style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w600,
+      ),
     );
   }
 
@@ -67,13 +65,8 @@ class ReminderContent extends StatelessWidget {
   }
 
   Widget _createRepeating() {
-    return const Text(
-      TextConstants.repeating,
-      style: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-      ),
-    );
+    return const Text(TextConstants.repeating,
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600));
   }
 
   Widget _createDayRepeating(BuildContext context) {
@@ -87,13 +80,14 @@ class ReminderContent extends StatelessWidget {
           children: [
             for (int i = 0; i < DataConstants.reminderDays.length; i++) ...[
               RepeatingDay(
-                  title: DataConstants.reminderDays[i],
-                  isSelected: bloc.selectRepeatDayIndex == i,
-                  onTap: () {
-                    bloc.add(RepeatDaySelectedEvent(
-                        index: i, dayTime: bloc.dayTime = i));
-                  })
-            ]
+                title: DataConstants.reminderDays[i],
+                isSelected: bloc.selectRepeatDayIndex == i,
+                onTap: () {
+                  bloc.add(RepeatDaySelectedEvent(
+                      index: i, dayTime: bloc.dayTime = i));
+                },
+              ),
+            ],
           ],
         );
       },
@@ -106,11 +100,11 @@ class RepeatingDay extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
 
-  const RepeatingDay(
-      {super.key,
-      required this.title,
-      required this.isSelected,
-      required this.onTap});
+  const RepeatingDay({super.key, 
+    required this.title,
+    required this.isSelected,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -121,15 +115,17 @@ class RepeatingDay extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.weightLossContainerColor: AppColors.categoriesWorkoutsTextColor.withOpacity(0.18),
-          borderRadius: BorderRadius.circular(20)
+          color: isSelected
+              ? AppColors.onboardingColor
+              : Colors.grey.withOpacity(0.18),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Text(
           title,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
-            color: isSelected ? AppColors.homeBackground : AppColors.categoriesWorkoutsTextColor
+            color: isSelected ?AppColors.onboardingColor : Colors.grey,
           ),
         ),
       ),

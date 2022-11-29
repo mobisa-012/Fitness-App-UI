@@ -5,7 +5,11 @@ part 'tab_bar_page_event.dart';
 part 'tab_bar_page_state.dart';
 
 class TabBarPageBloc extends Bloc<TabBarPageEvent, TabBarPageState> {
-  TabBarPageBloc() : super(TabBarPageInitial());
+  TabBarPageBloc() : super(TabBarPageInitial()) {
+    on<TabBarItemTappedEvent>((event, emit) async {
+      emit(TabBarItemSelectedState(index: currentIndex));
+    });
+  }
 
   int currentIndex = 0;
   bool isSelected = false;

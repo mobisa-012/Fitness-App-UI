@@ -28,12 +28,12 @@ class Analytics extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(15),
       height: 230,
-      width: screenWidth * 0.35,
+      width: screenWidth * 0.45,
       decoration: BoxDecoration(
-        color: AppColors.weightLossContainerColor,
+        color: AppColors.homeBackground,
         boxShadow: [
           BoxShadow(
-              color: AppColors.homeBackground.withOpacity(0.2),
+              color: AppColors.textColor.withOpacity(0.1),
               blurRadius: 5.0,
               spreadRadius: 1.1),
         ],
@@ -68,11 +68,15 @@ class Analytics extends StatelessWidget {
                 color: AppColors.textColor),
           ),
           const Text(
-            'Completed workouts',
+            'Completed',
             style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Colors.white10),
+                fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
+            textAlign: TextAlign.center,
+          ),
+          const Text(
+            'workouts',
+            style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
             textAlign: TextAlign.center,
           )
         ],
@@ -84,18 +88,20 @@ class Analytics extends StatelessWidget {
     return Column(
       children: [
         DataWorkouts(
-            icon: PathConstatnts.inProgress,
-            title: TextConstants.inProgress,
-            count: bloc.getInProgessWorkouts() ?? 0,
-            text: TextConstants.workouts,
-            ),
-            const SizedBox(height: 20,),
-            DataWorkouts(
-              icon: PathConstatnts.time, 
-              title: TextConstants.time, 
-              count: bloc.getTimeSpent() ?? 0, 
-              text: TextConstants.minutes,
-              )
+          icon: PathConstatnts.inProgress,
+          title: TextConstants.inProgress,
+          count: bloc.getInProgessWorkouts() ?? 0,
+          text: TextConstants.workouts,
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        DataWorkouts(
+          icon: PathConstatnts.time,
+          title: TextConstants.time,
+          count: bloc.getTimeSpent() ?? 0,
+          text: TextConstants.seconds,
+        )
       ],
     );
   }
@@ -123,10 +129,10 @@ class DataWorkouts extends StatelessWidget {
       width: screenWidth * 0.4,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Colors.black,
+          color: AppColors.homeBackground,
           boxShadow: [
             BoxShadow(
-                color: Colors.white.withOpacity(0.12),
+                color: AppColors.textColor.withOpacity(0.1),
                 blurRadius: 5.0,
                 spreadRadius: 1.1)
           ]),
@@ -144,7 +150,7 @@ class DataWorkouts extends StatelessWidget {
                 style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
-                    color: Colors.white),
+                    color: Colors.black),
               )
             ],
           ),
@@ -155,7 +161,7 @@ class DataWorkouts extends StatelessWidget {
                 style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white),
+                    color: Colors.black),
               ),
               const SizedBox(
                 width: 10,

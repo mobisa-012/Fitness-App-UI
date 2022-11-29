@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:bloc/bloc.dart';
 import 'package:flex_ui/core/services/auth_service.dart';
 import 'package:flex_ui/core/services/validation_service.dart';
@@ -7,18 +9,27 @@ part 'sign_in_event.dart';
 part 'sign_in_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  SignInBloc() : super(SignInInitial());
+  SignInBloc() : super(SignInInitial()) {
+    on<OnTextChangeEvent>((event, emit) async {
+      emit(const SignInButtonEnableChangedState(isEnabled: true));
+    });
+    on<SignInTappedEvent>((event, emit) async {
+      emit(LoadingState());
+    });
+  }
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
   bool isButtonEnabled = false;
 
-
-  Stream<SignInState> mapEventToState(SignInEvent event) async* {
-    if (event is OnTextChangedEvent) {
+  Stream<SignInState> mapEventToState(
+    SignInEvent event,
+  ) async* {
+    if (event is OnTextChangeEvent) {
       if (isButtonEnabled != _checkIfSignInButtonEnabled()) {
         isButtonEnabled = _checkIfSignInButtonEnabled();
-        yield SignInButtonEnabledChangedState(isEnabled: isButtonEnabled);
+        yield SignInButtonEnableChangedState(isEnabled: isButtonEnabled);
       }
     } else if (event is SignInTappedEvent) {
       if (_checkValidatorsOfTextField()) {
@@ -27,12 +38,10 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
           await AuthService.signIn(
               emailController.text, passwordController.text);
           yield NextTabBarPageState();
-          // ignore: avoid_print
-          print('Go to the next page');
+          print("Go to the next page");
         } catch (e) {
-          // ignore: avoid_print
-          print('E to string : $e');
-          yield SignInErrorState(message: e.toString());
+          print('E to tstrng: $e');
+          yield ErrorState(message: e.toString());
         }
       } else {
         yield ShowErrorState();
@@ -40,7 +49,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     } else if (event is ForgotPasswordTappedEvent) {
       yield NextForgotPasswordPageState();
     } else if (event is SignUpTappedEvent) {
-      yield NextSignUpState();
+      yield NextSignUpPageState();
     }
   }
 

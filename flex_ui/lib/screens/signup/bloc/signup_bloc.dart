@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:bloc/bloc.dart';
 import 'package:flex_ui/core/services/auth_service.dart';
 import 'package:flex_ui/core/services/validation_service.dart';
@@ -7,7 +9,17 @@ part 'signup_event.dart';
 part 'signup_state.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  SignUpBloc() : super(SignUpInitial());
+  SignUpBloc() : super(SignUpInitial()) {
+    on<SignInTappedEvent>((event, emit) async {
+      emit(NextSignInPageState());
+    });
+    on<OnTextChangedEvent>((event, emit) async {
+      emit(SignUpButtonEnabledState(isEnabled: true));
+    });
+    on<SignUpTappedEvent>((event, emit) async {
+      emit(NextTabBarPageState());
+    });
+  }
 
   final userNameController = TextEditingController();
   final emailController = TextEditingController();
@@ -16,7 +28,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
   bool isButtonEnabled = false;
 
-  Stream<SignUpState> mapEventToState(SignUpEvent event) async* {
+  Stream<SignUpState> mapEventToState(
+    SignUpEvent event,
+  ) async* {
     if (event is OnTextChangedEvent) {
       if (isButtonEnabled != checkIfSignUpButtonEnabled()) {
         isButtonEnabled = checkIfSignUpButtonEnabled();
@@ -29,8 +43,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           await AuthService.signUp(emailController.text,
               passwordController.text, userNameController.text);
           yield NextTabBarPageState();
-          // ignore: avoid_print
-          print('Go to the next page');
+          print("Go to the next page");
         } catch (e) {
           yield ErrorState(message: e.toString());
         }

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/data_constants.dart';
@@ -10,9 +12,10 @@ import 'package:flex_ui/screens/workout_details_screen/page/workoutdetails_page.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class HomeContent extends StatelessWidget {
-  const HomeContent({Key? key}) : super(key: key);
+  const HomeContent({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,83 +33,18 @@ class HomeContent extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20),
         children: [
           _createProfileData(context),
-          const SizedBox(height: 15),
-          _createTopWorkoutsList(context),
-          const SizedBox(height: 35),
-          _createCategoriesList(context),
+          const SizedBox(height: 20),
+          _createExercisesList(context),
+          const SizedBox(height: 25),
+          _createExercisesCategoriesList(context),
+          const SizedBox(height: 25),
+          _createChallengeCategory(context),
         ],
       ),
     );
   }
 
-  Widget _createProfileData(BuildContext context) {
-    final User? user = FirebaseAuth.instance.currentUser;
-    final displayName = user?.displayName ?? 'No username';
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                TextConstants.welcome,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                displayName,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.textFieldBorder,
-                ),
-              )
-            ],
-          ),
-          BlocBuilder<HomeBloc, HomeState>(
-            buildWhen: (_, currState) => currState is ReloadImageState,
-            builder: (context, state) {
-              final photUrl = FirebaseAuth.instance.currentUser?.photoURL;
-              return GestureDetector(
-                child: photUrl == null
-                    ? const CircleAvatar(
-                        backgroundImage:
-                            AssetImage(PathConstatnts.profileAvatar),
-                        radius: 60,
-                      )
-                    : CircleAvatar(
-                        radius: 25,
-                        child: ClipOval(
-                          child: FadeInImage.assetNetwork(
-                            placeholder: PathConstatnts.profileAvatar,
-                            image: photUrl,
-                            fit: BoxFit.cover,
-                            height: 120,
-                            width: 200,
-                          ),
-                        ),
-                      ),
-                onTap: () async {
-                  await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const EditAccountScreen()));
-                  // ignore: use_build_context_synchronously
-                  BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
-                },
-              );
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _createTopWorkoutsList(BuildContext context) {
+  Widget _createExercisesList(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -115,15 +53,13 @@ class HomeContent extends StatelessWidget {
           child: Text(
             TextConstants.topWorkouts,
             style: TextStyle(
-                color: AppColors.topWorkoutsandCategoriesColor,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                ),
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-        const SizedBox(
-          height: 15,
-        ),
+        const SizedBox(height: 15),
         SizedBox(
           height: 160,
           child: ListView(
@@ -135,29 +71,25 @@ class HomeContent extends StatelessWidget {
                   workout: DataConstants.homeWorkoutsTopWorkouts[0],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                          workout: DataConstants.homeWorkoutsTopWorkouts[0])))),
-              const SizedBox(
-                width: 20,
-              ),
+                            workout: DataConstants.workouts[0],
+                          )))),
+              const SizedBox(width: 15),
               WorkoutCard(
                   color: AppColors.absContainerColor,
                   workout: DataConstants.homeWorkoutsTopWorkouts[1],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                          workout: DataConstants.homeWorkoutsTopWorkouts[1])))),
-              const SizedBox(
-                width: 20,
-              ),
+                            workout: DataConstants.workouts[1],
+                          )))),
+              const SizedBox(width: 15),
               WorkoutCard(
-                color: AppColors.cardioColor,
-                workout: DataConstants.homeWorkoutsTopWorkouts[2],
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.homeWorkoutsTopWorkouts[2]))),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
+                  color: AppColors.cardioColor,
+                  workout: DataConstants.homeWorkoutsTopWorkouts[2],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[2],
+                          )))),
+              const SizedBox(width: 20),
             ],
           ),
         ),
@@ -165,7 +97,7 @@ class HomeContent extends StatelessWidget {
     );
   }
 
-  Widget _createCategoriesList(BuildContext context) {
+  Widget _createExercisesCategoriesList(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -174,51 +106,172 @@ class HomeContent extends StatelessWidget {
           child: Text(
             TextConstants.categories,
             style: TextStyle(
-              color: AppColors.topWorkoutsandCategoriesColor,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          ),
-          const SizedBox(
-          height: 15,
         ),
+        const SizedBox(height: 15),
         SizedBox(
-          height: 200,
+          height: 160,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
               const SizedBox(width: 20),
               WorkoutCard(
-                color: AppColors.pilatesContainerColor, 
-                workout: DataConstants.categoriesWorkouts[0], 
-                onTap: 
-                () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => WorkoutDetailsPage(workout: DataConstants.homeWorkoutsTopWorkouts[0])),
-                )),
-                const SizedBox(width: 20),
-                WorkoutCard(
-                  color: AppColors.yogaContainerColor, 
-                  workout: DataConstants.categoriesWorkouts[1], 
+                  color: AppColors.yogaContainerColor,
+                  workout: DataConstants.categoriesWorkouts[0],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.homeWorkoutsTopWorkouts[1]))),
-                  ),
-                const SizedBox(width: 20),
-                WorkoutCard(
-                  color: AppColors.bootyTrainingContainerColor, 
-                  workout: DataConstants.categoriesWorkouts[2], 
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[3],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: AppColors.thighsContainerColor,
+                  workout: DataConstants.categoriesWorkouts[1],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.homeWorkoutsTopWorkouts[2]))),
-                  ),
-                  const SizedBox(width: 20),
-                  WorkoutCard(
-                    color: AppColors.thighsContainerColor, 
-                    workout: DataConstants.categoriesWorkouts[3], 
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => WorkoutDetailsPage(
-                        workout: DataConstants.homeWorkoutsTopWorkouts[2]))),
-                    )
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[4],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: AppColors.pilatesContainerColor,
+                  workout: DataConstants.categoriesWorkouts[2],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[5],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: AppColors.bootyTrainingContainerColor,
+                  workout: DataConstants.categoriesWorkouts[3],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[6],
+                          )))),
+              const SizedBox(width: 20),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _createProfileData(BuildContext context) {
+    final User? user = FirebaseAuth.instance.currentUser;
+    final displayName = user?.displayName ?? "No Username";
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hi, $displayName',
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 2),
+              const Text(
+                TextConstants.letsCheckActivity,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
+          BlocBuilder<HomeBloc, HomeState>(
+            buildWhen: (_, currState) => currState is ReloadImageState,
+            builder: (context, state) {
+              final photoUrl = FirebaseAuth.instance.currentUser?.photoURL;
+              return GestureDetector(
+                child: photoUrl == null
+                    ? const CircleAvatar(
+                        backgroundImage:
+                            AssetImage(PathConstatnts.profileAvatar),
+                        radius: 50)
+                    : CircleAvatar(
+                        radius: 23,
+                        child: ClipOval(
+                            child: FadeInImage.assetNetwork(
+                                placeholder: PathConstatnts.profileAvatar,
+                                image: photoUrl,
+                                fit: BoxFit.cover,
+                                width: 150,
+                                height: 120))),
+                onTap: () async {
+                  await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const EditAccountScreen()));
+                  BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
+                },
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _createChallengeCategory(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            'Booty Challenge',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 160,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              const SizedBox(width: 20),
+              WorkoutCard(
+                  color: AppColors.yogaContainerColor,
+                  workout: DataConstants.categoriesWorkouts[0],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[3],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: AppColors.thighsContainerColor,
+                  workout: DataConstants.categoriesWorkouts[1],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[4],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: AppColors.pilatesContainerColor,
+                  workout: DataConstants.categoriesWorkouts[2],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[5],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: AppColors.bootyTrainingContainerColor,
+                  workout: DataConstants.categoriesWorkouts[3],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[6],
+                          )))),
+              const SizedBox(width: 20),
             ],
           ),
         ),

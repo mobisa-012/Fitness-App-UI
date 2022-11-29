@@ -1,7 +1,6 @@
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flutter/material.dart';
 
-
 class SettingsContainer extends StatelessWidget {
   final bool withArrow;
   final Widget child;
@@ -14,20 +13,19 @@ class SettingsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
         width: double.infinity,
         height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
-          color: Colors.white,
+          color: AppColors.homeBackground,
           boxShadow: [
             BoxShadow(
-              color: AppColors.loadingBlack.withOpacity(0.12),
-              blurRadius: 5.0,
-              spreadRadius: 1.1
-            )
-          ]
+                color: AppColors.textColor.withOpacity(0.12),
+                blurRadius: 5.0,
+                spreadRadius: 1.1)
+          ],
         ),
         child: Material(
           color: Colors.transparent,
@@ -38,19 +36,16 @@ class SettingsContainer extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
-                  Expanded(
-                    child: child,
-                    ),
-                    if (withArrow) const Icon(Icons.arrow_forward_ios,
-                    color: AppColors.weightLossContainerColor,
-                    size: 20,
-                    ),
+                  Expanded(child: child),
+                  if (withArrow)
+                    const Icon(Icons.arrow_forward_ios,
+                        color: AppColors.onboardingColor, size: 20)
                 ],
               ),
             ),
           ),
         ),
       ),
-      );
+    );
   }
 }

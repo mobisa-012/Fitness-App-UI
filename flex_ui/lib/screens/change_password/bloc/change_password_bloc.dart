@@ -10,7 +10,6 @@ class ChangePasswordBloc
     extends Bloc<ChangePasswordEvent, ChangePasswordState> {
   ChangePasswordBloc() : super(ChangePasswordInitial());
 
-
   Stream<ChangePasswordState> mapEventToState(
       ChangePasswordEvent event) async* {
     if (event is ChangePassword) {

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +9,15 @@ class SettingsTextField extends StatefulWidget {
   final bool obscureText;
   final String placeHolder;
 
-  const SettingsTextField(
-      {super.key,
-      required this.controller,
-      this.obscureText = false,
-      required this.placeHolder});
+  const SettingsTextField({
+    Key? key,
+    required this.controller,
+    this.obscureText = false,
+    required this.placeHolder,
+  }) : super(key: key);
 
   @override
-  State<SettingsTextField> createState() => _SettingsTextFieldState();
+  _SettingsTextFieldState createState() => _SettingsTextFieldState();
 }
 
 class _SettingsTextFieldState extends State<SettingsTextField> {
@@ -24,6 +27,7 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
   @override
   void initState() {
     super.initState();
+
     stateObscureText = widget.obscureText;
   }
 
@@ -41,15 +45,19 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _createSettingsTextField(),
-          if (widget.obscureText) ...[
-            Positioned(
-              right: 0,
-              bottom: 0,
-              top: 0,
-              child: _createShowEye(),
-            )
-          ]
+          Stack(
+            children: [
+              _createSettingsTextField(),
+              if (widget.obscureText) ...[
+                Positioned(
+                  right: 0,
+                  bottom: 0,
+                  top: 0,
+                  child: _createShowEye(),
+                ),
+              ],
+            ],
+          ),
         ],
       ),
     );
@@ -60,17 +68,16 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
       focusNode: focusNode,
       controller: widget.controller,
       obscureText: stateObscureText,
-      style: const TextStyle(fontWeight: FontWeight.w600),
+      style: const TextStyle(fontWeight: FontWeight.w400),
       decoration: InputDecoration(
-          hintText: widget.placeHolder,
-          hintStyle: const TextStyle(
-            color: Colors.grey,
-            fontSize: 18,
-          ),
-          border: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          disabledBorder: InputBorder.none),
+        hintText: widget.placeHolder,
+        hintStyle: const TextStyle(color: Colors.grey, fontSize: 16),
+        border: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        errorBorder: InputBorder.none,
+        disabledBorder: InputBorder.none,
+      ),
     );
   }
 
@@ -83,9 +90,11 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
       },
       child: Image(
         image: const AssetImage(
-          PathConstatnts.eye,
+         PathConstatnts.eye,
         ),
-        color: widget.controller.text.isNotEmpty ? AppColors.weightLossContainerColor : AppColors.categoriesWorkoutsTextColor,
+        color: widget.controller.text.isNotEmpty
+            ? AppColors.onboardingColor
+            : AppColors.topWorkoutsandCategoriesColor,
       ),
     );
   }

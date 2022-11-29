@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1015327607209",
+    "project_id": "flex-2c504",
+    "storage_bucket": "flex-2c504.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015327607209:android:a3888d73c63092e970dcb8",
+        "android_client_info": {
+          "package_name": "com.example.flex_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015327607209-kqb7n2soas3tge7gfs6445vilclhmt5e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5_0A3tWSB0AxJAjkidmAXVLXBF_tvayc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015327607209-kqb7n2soas3tge7gfs6445vilclhmt5e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

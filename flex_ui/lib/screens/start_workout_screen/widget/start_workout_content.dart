@@ -170,7 +170,7 @@ class StartWorkoutContent extends StatelessWidget {
                     width: 6.5,
                   ),
                   Text(
-                      '${nextExercise!.minutes >= 10 ? nextExercise!.minutes : '0${nextExercise!.minutes}'}')
+                      '${nextExercise!.seconds >= 10 ? nextExercise!.seconds : '0${nextExercise!.seconds}'}')
                 ],
               )
             : const SizedBox.shrink(),

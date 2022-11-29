@@ -15,7 +15,7 @@ class ForgotPasswordPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           TextConstants.passwordReset,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style: TextStyle(fontSize: 18, color: AppColors.onboardingColor),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -23,8 +23,7 @@ class ForgotPasswordPage extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
         ),
-        iconTheme:
-            const IconThemeData(color: AppColors.weightLossContainerColor),
+        iconTheme: const IconThemeData(color: AppColors.onboardingColor),
       ),
       body: _buildContext(context),
     );

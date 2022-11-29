@@ -9,38 +9,39 @@ class DataConstants {
   static final onboardingTiles = [
     const OnboardingTile(
       title: TextConstants.onboarding1Title,
-      imaPath: PathConstatnts.onboarding1,
+      imagePath: PathConstatnts.onboarding1,
       mainText: TextConstants.onboarding1Description,
     ),
     const OnboardingTile(
       title: TextConstants.onboarding2Title,
       mainText: TextConstants.onboarding2Description,
-      imaPath: PathConstatnts.onboarding2,
+      imagePath: PathConstatnts.onboarding2,
     ),
     const OnboardingTile(
-      imaPath: PathConstatnts.onboarding3,
+      imagePath: PathConstatnts.onboarding3,
       mainText: TextConstants.onboarding3Description,
       title: TextConstants.onboarding3Title,
     )
   ];
 
+//home top workouts
   static final List<WorkoutData> homeWorkoutsTopWorkouts = [
-    WorkoutData(
-        //weight losss container
+    //weight losss container
+    WorkoutData(        
         currentProgress: 0,
         exercises: TextConstants.fullBodyWorkout,
         image: PathConstatnts.fullbody,
-        minutes: TextConstants.time,
+        seconds: TextConstants.time,
         progress: 0,
         title: TextConstants.weightLossTraining,
         exerciseDataList: [
           ExerciseData(
             title: TextConstants.highKness,
-            minutes: TextConstants.highKnessMin,
+            seconds: TextConstants.highKnessMin,
             progress: 0,
             video: PathConstatnts.highKnees,
             description: TextConstants.highKneesDescription,
-            image: '',
+            pic: PathConstatnts.highKneesPic,
             steps: [
               TextConstants.highKneesDescription1,
               TextConstants.highKneesDescription2,
@@ -52,11 +53,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.squats,
-            minutes: TextConstants.squatsMin,
+            seconds: TextConstants.squatsMin,
             progress: 0,
             video: PathConstatnts.squatsVideo,
             description: TextConstants.squatsDescription,
-            image: '',
+            pic: PathConstatnts.squatsPic,
             steps: [
               TextConstants.squatsDescription1,
               TextConstants.squatsDescription2,
@@ -65,11 +66,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.jumpRope,
-            minutes: TextConstants.jumpRopeMin,
+            seconds: TextConstants.jumpRopeMin,
             progress: 0,
             video: PathConstatnts.jumpRope,
             description: TextConstants.jumpRopeDescription,
-            image: '',
+            pic: PathConstatnts.jumpRopePic,
             steps: [
               TextConstants.jumpRopeDescription1,
               TextConstants.jumpRopeDescription2,
@@ -84,11 +85,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.jumpingJack,
-            minutes: TextConstants.jumpingJackMin,
+            seconds: TextConstants.jumpingJackMin,
             progress: 0,
             video: PathConstatnts.jumpingJacks,
             description: TextConstants.jumpingJacksDescription,
-            image: '',
+            pic: PathConstatnts.jumpingJacks,
             steps: [
               TextConstants.jumpingJackDescription1,
               TextConstants.jumpingJackDescription2,
@@ -98,11 +99,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.highPlank,
-            minutes: TextConstants.highPlankMin,
+            seconds: TextConstants.highPlankMin,
             progress: 0,
             video: PathConstatnts.plank,
             description: TextConstants.highPlankDescription,
-            image: '',
+            pic: PathConstatnts.plankPic,
             steps: [
               TextConstants.highKneesDescription1,
               TextConstants.highKneesDescription2,
@@ -114,11 +115,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.toeTouches,
-            minutes: TextConstants.toeTouchesMin,
+            seconds: TextConstants.toeTouchesMin,
             progress: 0,
             video: PathConstatnts.toeTouches,
             description: TextConstants.toeTouchesDescription,
-            image: '',
+            pic: PathConstatnts.toeTouchesPic,
             steps: [
               TextConstants.toeTouchesDescription1,
               TextConstants.toeTouchesDescription2,
@@ -130,28 +131,28 @@ class DataConstants {
 
     //Abs container
     WorkoutData(
-      minutes: TextConstants.absMinutes,
+      seconds: TextConstants.absseconds,
       currentProgress: 0,
       exercises: TextConstants.abs,
       exerciseDataList: [
         ExerciseData(
           title: TextConstants.crunchKicks,
           description: TextConstants.crunchKicksDescription,
-          image: '',
+          pic: PathConstatnts.abs,
           steps: [
             TextConstants.crunchKicksDescription1,
             TextConstants.crunchKicksDescription2,
             TextConstants.crunchKicksDescription3,
             TextConstants.crunchKicksDescription4
           ],
-          minutes: TextConstants.crunchKicksMin,
+          seconds: TextConstants.crunchKicksMin,
           progress: 0,
           video: PathConstatnts.crunchKicks,
         ),
         ExerciseData(
           title: TextConstants.russianTwist,
           description: TextConstants.russianTwistDescription,
-          image: '',
+          pic: PathConstatnts.russianTwistPic,
           steps: [
             TextConstants.russianTwistDescription1,
             TextConstants.russianTwistDescription2,
@@ -159,14 +160,14 @@ class DataConstants {
             TextConstants.russianTwistDescription4,
             TextConstants.russianTwistDescription5
           ],
-          minutes: TextConstants.russianTwistMin,
+          seconds: TextConstants.russianTwistMin,
           progress: 0,
           video: PathConstatnts.russianTwist,
         ),
         ExerciseData(
           title: TextConstants.slowMountainClimber,
           description: TextConstants.mountainClimberDescription,
-          image: '',
+          pic: PathConstatnts.mtClimber,
           steps: [
             TextConstants.mountainClimberDescription1,
             TextConstants.mountainClimberDescription2,
@@ -174,26 +175,26 @@ class DataConstants {
             TextConstants.mountainClimberDescription4,
             TextConstants.mountainClimberDescription5
           ],
-          minutes: TextConstants.mountainClimberMin,
+          seconds: TextConstants.mountainClimberMin,
           progress: 0,
           video: PathConstatnts.mountainClimber,
         ),
         ExerciseData(
           title: TextConstants.abHold,
           description: TextConstants.abHoldDescription,
-          image: '',
+          pic: PathConstatnts.abholdPic,
           steps: [
             TextConstants.abHoldDescription1,
             TextConstants.abHoldDescription2
           ],
-          minutes: TextConstants.abHoldMin,
+          seconds: TextConstants.abHoldMin,
           progress: 0,
           video: PathConstatnts.abhold,
         ),
         ExerciseData(
           title: TextConstants.reversecrunches,
           description: TextConstants.reversecrunchesDescription,
-          image: '',
+          pic: PathConstatnts.reverseCrunchPic,
           steps: [
             TextConstants.reversecrunchesDescription1,
             TextConstants.reversecrunchesDescription2,
@@ -203,14 +204,14 @@ class DataConstants {
             TextConstants.reversecrunchesDescription6,
             TextConstants.reversecrunchesDescription7
           ],
-          minutes: TextConstants.reversecrunchesMin,
+          seconds: TextConstants.reversecrunchesMin,
           progress: 0,
           video: PathConstatnts.reverseCrunch,
         ),
         ExerciseData(
           title: TextConstants.rightSideCrunch,
           description: TextConstants.sideCrunchDescription,
-          image: '',
+          pic: PathConstatnts.sideCrunchPic,
           steps: [
             TextConstants.rightSideCrunchDescription1,
             TextConstants.rightSideCrunchDescription2,
@@ -219,14 +220,14 @@ class DataConstants {
             TextConstants.rightSideCrunchDescription5,
             TextConstants.rightSideCrunchDescription6
           ],
-          minutes: TextConstants.rightSideCrunchMin,
+          seconds: TextConstants.rightSideCrunchMin,
           progress: 0,
           video: PathConstatnts.sideCrunch,
         ),
         ExerciseData(
           title: TextConstants.leftSideCrunch,
           description: TextConstants.sideCrunchDescription,
-          image: '',
+          pic: PathConstatnts.sideCrunchPic,
           steps: [
             TextConstants.leftSideCrunchDescription1,
             TextConstants.leftSideCrunchDescription2,
@@ -235,12 +236,12 @@ class DataConstants {
             TextConstants.leftSideCrunchDescription5,
             TextConstants.leftSideCrunchDescription6
           ],
-          minutes: TextConstants.leftSideCrunchMin,
+          seconds: TextConstants.leftSideCrunchMin,
           progress: 0,
           video: PathConstatnts.sideCrunch,
         ),
       ],
-      image: '',
+      image: PathConstatnts.abs,
       progress: 0,
       title: TextConstants.abs,
     ),
@@ -251,8 +252,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.jumpRopeDescription,
-          image: '',
-          minutes: TextConstants.jumpRopeMin,
+          pic: PathConstatnts.jumpRopePic,
+          seconds: TextConstants.jumpRopeMin,
           progress: 0,
           title: TextConstants.jumpRope,
           video: PathConstatnts.jumpRope,
@@ -270,8 +271,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sideHopDescription,
-          image: '',
-          minutes: TextConstants.sideHopMin,
+          pic: PathConstatnts.sideToSideHopPic,
+          seconds: TextConstants.sideHopMin,
           progress: 0,
           title: TextConstants.sideHop,
           video: PathConstatnts.sideToSideHop,
@@ -284,8 +285,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.jumpingJacksDescription,
-          image: '',
-          minutes: TextConstants.jumpingJackMin,
+          pic: PathConstatnts.jumpJacksPic,
+          seconds: TextConstants.jumpingJackMin,
           progress: 0,
           title: TextConstants.jumpingJack,
           video: PathConstatnts.jumpingJacks,
@@ -298,8 +299,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.highKneesDescription,
-          image: '',
-          minutes: TextConstants.highKnessMin,
+          pic: PathConstatnts.highKneesPic,
+          seconds: TextConstants.highKnessMin,
           progress: 0,
           title: TextConstants.highKness,
           video: PathConstatnts.highKnees,
@@ -313,13 +314,14 @@ class DataConstants {
           ],
         )
       ],
-      image: '',
-      minutes: TextConstants.cardioMinutes,
+      image: PathConstatnts.cardio,
+      seconds: TextConstants.cardioseconds,
       progress: 0,
       title: TextConstants.cardio,
     ),
   ];
 
+//categories containsers
   static final List<WorkoutData> categoriesWorkouts = [
     //Yoga container
     WorkoutData(
@@ -328,8 +330,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.cowPoseDescription,
-          image: '',
-          minutes: TextConstants.cowPoseMin,
+          pic: PathConstatnts.cowPosePic,
+          seconds: TextConstants.cowPoseMin,
           progress: 0,
           title: TextConstants.cowPose,
           video: PathConstatnts.cowPose,
@@ -344,8 +346,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.childPoseDescription,
-          image: PathConstatnts.childPose,
-          minutes: TextConstants.childPoseMin,
+          pic: PathConstatnts.childPose,
+          seconds: TextConstants.childPoseMin,
           progress: 0,
           title: TextConstants.childPose,
           video: PathConstatnts.childPose,
@@ -360,8 +362,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.highLungeDescription,
-          image: '',
-          minutes: TextConstants.highLungeMin,
+          pic: PathConstatnts.highLungePic,
+          seconds: TextConstants.highLungeMin,
           progress: 0,
           title: TextConstants.highLunge,
           video: PathConstatnts.highLunge,
@@ -376,8 +378,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.warriorIIDescription,
-          image: PathConstatnts.warriorII,
-          minutes: TextConstants.warriorIIMin,
+          pic: PathConstatnts.warriorII,
+          seconds: TextConstants.warriorIIMin,
           progress: 0,
           title: TextConstants.warriorII,
           video: PathConstatnts.warriorIIPose,
@@ -391,8 +393,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.downwardDogDescription,
-          image: PathConstatnts.downwardDogImage,
-          minutes: TextConstants.downwardDogMin,
+          pic: PathConstatnts.downwardDogImage,
+          seconds: TextConstants.downwardDogMin,
           progress: 0,
           title: TextConstants.downwardDog,
           video: PathConstatnts.downwardDog,
@@ -410,8 +412,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.upwardDogDescription,
-          image: '',
-          minutes: TextConstants.upwardDogMin,
+          pic: PathConstatnts.upwardDogPic,
+          seconds: TextConstants.upwardDogMin,
           progress: 0,
           title: TextConstants.upwardDog,
           video: '',
@@ -428,8 +430,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.reverseWarriorDescription,
-          image: '',
-          minutes: TextConstants.reverseWarriorMin,
+          pic: PathConstatnts.reverseWarriorPic,
+          seconds: TextConstants.reverseWarriorMin,
           progress: 0,
           title: TextConstants.reverseWarrior,
           video: PathConstatnts.reverseWarrior,
@@ -442,8 +444,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.highPlankDescription,
-          image: '',
-          minutes: TextConstants.highPlankMin,
+          pic: PathConstatnts.plankPic,
+          seconds: TextConstants.highPlankMin,
           progress: 0,
           title: TextConstants.highPlank,
           video: PathConstatnts.plank,
@@ -455,8 +457,8 @@ class DataConstants {
           ],
         ),
       ],
-      image: '',
-      minutes: TextConstants.yogaMinutes,
+      image: PathConstatnts.yogaPic,
+      seconds: TextConstants.yogaseconds,
       progress: 0,
       title: TextConstants.yoga,
     ),
@@ -468,8 +470,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.sumoSquatDescription,
-          image: '',
-          minutes: TextConstants.sumoSquatsMin,
+          pic: PathConstatnts.sumoSquatsPic,
+          seconds: TextConstants.sumoSquatsMin,
           progress: 0,
           title: TextConstants.sumoSquats,
           video: PathConstatnts.sumoSquats,
@@ -484,8 +486,8 @@ class DataConstants {
         ),
         ExerciseData(
             description: TextConstants.donkeyKicksDescription,
-            image: '',
-            minutes: TextConstants.thighdonkeyKicksThighsLeftMin,
+            pic: PathConstatnts.donkeyKicksPic,
+            seconds: TextConstants.thighdonkeyKicksThighsLeftMin,
             progress: 0,
             title: TextConstants.donkeyKicksLeft,
             video: PathConstatnts.donkeyKicks,
@@ -498,8 +500,8 @@ class DataConstants {
             ]),
         ExerciseData(
           description: TextConstants.donkeyKicksDescription,
-          image: '',
-          minutes: TextConstants.thighdonkeyKicksThighsRightMin,
+          pic: PathConstatnts.donkeyKicksPic,
+          seconds: TextConstants.thighdonkeyKicksThighsRightMin,
           progress: 0,
           title: TextConstants.donkeyKicksRight,
           video: PathConstatnts.donkeyKicks,
@@ -513,8 +515,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sideLegLiftLeftDescription,
-          image: '',
-          minutes: TextConstants.sideLegLiftLeftMin,
+          pic: PathConstatnts.sideLegLiftPic,
+          seconds: TextConstants.sideLegLiftLeftMin,
           progress: 0,
           title: TextConstants.sideLegLiftLeft,
           video: PathConstatnts.sideLegLift,
@@ -532,8 +534,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sideLegLiftLeftDescription,
-          image: '',
-          minutes: TextConstants.sideLegLiftRightMin,
+          pic: PathConstatnts.sideLegLiftPic,
+          seconds: TextConstants.sideLegLiftRightMin,
           progress: 0,
           title: TextConstants.sideLegLiftRight,
           video: PathConstatnts.sideLegLift,
@@ -551,8 +553,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sumoSquatDescription,
-          image: '',
-          minutes: TextConstants.sumoSquatsMin,
+          pic: PathConstatnts.sumoSquatsPic,
+          seconds: TextConstants.sumoSquatsMin,
           progress: 0,
           title: TextConstants.sumoSquats,
           video: PathConstatnts.sumoSquats,
@@ -566,8 +568,8 @@ class DataConstants {
           ],
         )
       ],
-      image: '',
-      minutes: TextConstants.thighsMinutes,
+      image: PathConstatnts.thighsPic,
+      seconds: TextConstants.thighsseconds,
       progress: 0,
       title: TextConstants.thighs,
     ),
@@ -579,8 +581,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.crissCrossDescription,
-          image: '',
-          minutes: TextConstants.crissCrossMin,
+          pic: PathConstatnts.crissCrossPic,
+          seconds: TextConstants.crissCrossMin,
           progress: 0,
           title: TextConstants.crissCross,
           video: PathConstatnts.crissCross,
@@ -595,8 +597,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.doubleLegStretchDescription,
-          image: '',
-          minutes: TextConstants.doubleLegStretchMin,
+          pic: PathConstatnts.doubleLegStretchPic,
+          seconds: TextConstants.doubleLegStretchMin,
           progress: 0,
           title: TextConstants.doubleLegStretch,
           video: PathConstatnts.doubleLegStretch,
@@ -614,8 +616,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.scissorKicksDescription,
-          image: '',
-          minutes: TextConstants.scissorKicksNin,
+          pic: PathConstatnts.scissorKicksPic,
+          seconds: TextConstants.scissorKicksNin,
           progress: 0,
           title: TextConstants.scissorKicks,
           video: PathConstatnts.scissorKicks,
@@ -630,8 +632,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.plankLegLiftDescription,
-          image: '',
-          minutes: TextConstants.plankLegLiftMin,
+          pic: PathConstatnts.plankLegLiftPic,
+          seconds: TextConstants.plankLegLiftMin,
           progress: 0,
           title: TextConstants.plankLegLift,
           video: PathConstatnts.plankLegLift,
@@ -646,8 +648,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.teaserDescription,
-          image: '',
-          minutes: TextConstants.teaserMin,
+          pic: PathConstatnts.teaser,
+          seconds: TextConstants.teaserMin,
           progress: 0,
           title: TextConstants.teaser,
           video: PathConstatnts.teaser,
@@ -661,8 +663,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.plankRockDescription,
-          image: '',
-          minutes: TextConstants.plankRockMin,
+          pic: PathConstatnts.plankRockPic,
+          seconds: TextConstants.plankRockMin,
           progress: 0,
           title: TextConstants.plankRock,
           video: PathConstatnts.plankRock,
@@ -674,8 +676,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.singleLegStretchDescription,
-          image: '',
-          minutes: TextConstants.singleLegStretchMin,
+          pic: PathConstatnts.singleLegStretchPic,
+          seconds: TextConstants.singleLegStretchMin,
           progress: 0,
           title: TextConstants.singleLegStretch,
           video: PathConstatnts.singleLegStretch,
@@ -689,8 +691,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.pilates100Description,
-          image: '',
-          minutes: TextConstants.pilates100Min,
+          pic: PathConstatnts.pilates100Pic,
+          seconds: TextConstants.pilates100Min,
           progress: 0,
           title: TextConstants.pilates100,
           video: PathConstatnts.pilates100,
@@ -704,8 +706,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.legCircleDescription,
-          image: '',
-          minutes: TextConstants.legCircleMin,
+          pic: PathConstatnts.legCirclePic,
+          seconds: TextConstants.legCircleMin,
           progress: 0,
           title: TextConstants.legCircle,
           video: PathConstatnts.legCircle,
@@ -718,8 +720,8 @@ class DataConstants {
           ],
         )
       ],
-      image: '',
-      minutes: TextConstants.pilatesMinutes,
+      image: PathConstatnts.pilatesPic,
+      seconds: TextConstants.pilatesseconds,
       progress: 0,
       title: TextConstants.pilates,
     ),
@@ -731,8 +733,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.highKneesDescription,
-          image: '',
-          minutes: TextConstants.highKnessMin,
+          pic: PathConstatnts.highKneesPic,
+          seconds: TextConstants.highKnessMin,
           progress: 0,
           title: TextConstants.highKness,
           video: PathConstatnts.highKnees,
@@ -747,8 +749,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.squatsDescription,
-          image: '',
-          minutes: TextConstants.squatsMin,
+          pic: PathConstatnts.squatsPic,
+          seconds: TextConstants.squatsMin,
           progress: 0,
           title: TextConstants.squats,
           video: PathConstatnts.squats,
@@ -760,8 +762,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.donkeyKicksDescription,
-          image: '',
-          minutes: TextConstants.donkeyKicksLeftMin,
+          pic: PathConstatnts.donkeyKicksPic,
+          seconds: TextConstants.donkeyKicksLeftMin,
           progress: 0,
           title: TextConstants.donkeyKicksLeft,
           video: PathConstatnts.donkeyKicks,
@@ -775,8 +777,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.donkeyKicksDescription,
-          image: '',
-          minutes: TextConstants.donkeyKicksRightMin,
+          pic: PathConstatnts.donkeyKicksPic,
+          seconds: TextConstants.donkeyKicksRightMin,
           progress: 0,
           title: TextConstants.donkeyKicksRight,
           video: PathConstatnts.donkeyKicks,
@@ -790,8 +792,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.lungesDescription,
-          image: '',
-          minutes: TextConstants.lungesMin,
+          pic: PathConstatnts.lungesPic,
+          seconds: TextConstants.lungesMin,
           progress: 0,
           title: TextConstants.lunges,
           video: PathConstatnts.lunges,
@@ -805,8 +807,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.buttBridgeDescription,
-          image: '',
-          minutes: TextConstants.buttBridgeMin,
+          pic: PathConstatnts.buttBridgePic,
+          seconds: TextConstants.buttBridgeMin,
           progress: 0,
           title: TextConstants.buttBridge,
           video: PathConstatnts.buttBridge,
@@ -820,8 +822,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sumoSquatDescription,
-          image: '',
-          minutes: TextConstants.sumoSquatsMin,
+          pic: PathConstatnts.sumoSquatsPic,
+          seconds: TextConstants.sumoSquatsMin,
           progress: 0,
           title: TextConstants.sumoSquats,
           video: PathConstatnts.sumoSquats,
@@ -836,8 +838,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.jumpingSquatsDescription,
-          image: '',
-          minutes: TextConstants.jumpingSquatsMin,
+          pic: PathConstatnts.jumpingSquatsPic,
+          seconds: TextConstants.jumpingSquatsMin,
           progress: 0,
           title: TextConstants.jumpingSquats,
           video: PathConstatnts.jumpingSquats,
@@ -851,13 +853,13 @@ class DataConstants {
           ],
         ),
       ],
-      image: '',
-      minutes: TextConstants.bootyMinutes,
+      image: PathConstatnts.bootyPic,
+      seconds: TextConstants.bootyseconds,
       progress: 0,
       title: TextConstants.booty,
     ),
   ];
-  
+
   static List<String> reminderDays = [
     TextConstants.everyday,
     TextConstants.monday_friday,
@@ -870,24 +872,25 @@ class DataConstants {
     TextConstants.saturday,
     TextConstants.sunday,
   ];
- 
+
   static List<WorkoutData> workouts = [
+    //weight loss
     WorkoutData(
         //weight losss container
         currentProgress: 0,
         exercises: TextConstants.fullBodyWorkout,
         image: PathConstatnts.fullbody,
-        minutes: TextConstants.time,
+        seconds: TextConstants.time,
         progress: 0,
         title: TextConstants.weightLossTraining,
         exerciseDataList: [
           ExerciseData(
             title: TextConstants.highKness,
-            minutes: TextConstants.highKnessMin,
+            seconds: TextConstants.highKnessMin,
             progress: 0,
             video: PathConstatnts.highKnees,
             description: TextConstants.highKneesDescription,
-            image: '',
+            pic: PathConstatnts.highKneesPic,
             steps: [
               TextConstants.highKneesDescription1,
               TextConstants.highKneesDescription2,
@@ -899,11 +902,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.squats,
-            minutes: TextConstants.squatsMin,
+            seconds: TextConstants.squatsMin,
             progress: 0,
             video: PathConstatnts.squatsVideo,
             description: TextConstants.squatsDescription,
-            image: '',
+            pic: PathConstatnts.squatsPic,
             steps: [
               TextConstants.squatsDescription1,
               TextConstants.squatsDescription2,
@@ -912,11 +915,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.jumpRope,
-            minutes: TextConstants.jumpRopeMin,
+            seconds: TextConstants.jumpRopeMin,
             progress: 0,
             video: PathConstatnts.jumpRope,
             description: TextConstants.jumpRopeDescription,
-            image: '',
+            pic: PathConstatnts.jumpRopePic,
             steps: [
               TextConstants.jumpRopeDescription1,
               TextConstants.jumpRopeDescription2,
@@ -931,11 +934,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.jumpingJack,
-            minutes: TextConstants.jumpingJackMin,
+            seconds: TextConstants.jumpingJackMin,
             progress: 0,
             video: PathConstatnts.jumpingJacks,
             description: TextConstants.jumpingJacksDescription,
-            image: '',
+            pic: PathConstatnts.jumpJacksPic,
             steps: [
               TextConstants.jumpingJackDescription1,
               TextConstants.jumpingJackDescription2,
@@ -945,11 +948,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.highPlank,
-            minutes: TextConstants.highPlankMin,
+            seconds: TextConstants.highPlankMin,
             progress: 0,
             video: PathConstatnts.plank,
             description: TextConstants.highPlankDescription,
-            image: '',
+            pic: PathConstatnts.plankPic,
             steps: [
               TextConstants.highKneesDescription1,
               TextConstants.highKneesDescription2,
@@ -961,11 +964,11 @@ class DataConstants {
           ),
           ExerciseData(
             title: TextConstants.toeTouches,
-            minutes: TextConstants.toeTouchesMin,
+            seconds: TextConstants.toeTouchesMin,
             progress: 0,
             video: PathConstatnts.toeTouches,
             description: TextConstants.toeTouchesDescription,
-            image: '',
+            pic: PathConstatnts.toeTouchesPic,
             steps: [
               TextConstants.toeTouchesDescription1,
               TextConstants.toeTouchesDescription2,
@@ -977,28 +980,28 @@ class DataConstants {
 
     //Abs container
     WorkoutData(
-      minutes: TextConstants.absMinutes,
+      seconds: TextConstants.absseconds,
       currentProgress: 0,
       exercises: TextConstants.abs,
       exerciseDataList: [
         ExerciseData(
           title: TextConstants.crunchKicks,
           description: TextConstants.crunchKicksDescription,
-          image: '',
+          pic: PathConstatnts.crunchKicksPic,
           steps: [
             TextConstants.crunchKicksDescription1,
             TextConstants.crunchKicksDescription2,
             TextConstants.crunchKicksDescription3,
             TextConstants.crunchKicksDescription4
           ],
-          minutes: TextConstants.crunchKicksMin,
+          seconds: TextConstants.crunchKicksMin,
           progress: 0,
           video: PathConstatnts.crunchKicks,
         ),
         ExerciseData(
           title: TextConstants.russianTwist,
           description: TextConstants.russianTwistDescription,
-          image: '',
+          pic: PathConstatnts.russianTwistPic,
           steps: [
             TextConstants.russianTwistDescription1,
             TextConstants.russianTwistDescription2,
@@ -1006,14 +1009,14 @@ class DataConstants {
             TextConstants.russianTwistDescription4,
             TextConstants.russianTwistDescription5
           ],
-          minutes: TextConstants.russianTwistMin,
+          seconds: TextConstants.russianTwistMin,
           progress: 0,
           video: PathConstatnts.russianTwist,
         ),
         ExerciseData(
           title: TextConstants.slowMountainClimber,
           description: TextConstants.mountainClimberDescription,
-          image: '',
+          pic: PathConstatnts.mtClimber,
           steps: [
             TextConstants.mountainClimberDescription1,
             TextConstants.mountainClimberDescription2,
@@ -1021,26 +1024,26 @@ class DataConstants {
             TextConstants.mountainClimberDescription4,
             TextConstants.mountainClimberDescription5
           ],
-          minutes: TextConstants.mountainClimberMin,
+          seconds: TextConstants.mountainClimberMin,
           progress: 0,
           video: PathConstatnts.mountainClimber,
         ),
         ExerciseData(
           title: TextConstants.abHold,
           description: TextConstants.abHoldDescription,
-          image: '',
+          pic: PathConstatnts.abholdPic,
           steps: [
             TextConstants.abHoldDescription1,
             TextConstants.abHoldDescription2
           ],
-          minutes: TextConstants.abHoldMin,
+          seconds: TextConstants.abHoldMin,
           progress: 0,
           video: PathConstatnts.abhold,
         ),
         ExerciseData(
           title: TextConstants.reversecrunches,
           description: TextConstants.reversecrunchesDescription,
-          image: '',
+          pic: PathConstatnts.reverseCrunchPic,
           steps: [
             TextConstants.reversecrunchesDescription1,
             TextConstants.reversecrunchesDescription2,
@@ -1050,14 +1053,14 @@ class DataConstants {
             TextConstants.reversecrunchesDescription6,
             TextConstants.reversecrunchesDescription7
           ],
-          minutes: TextConstants.reversecrunchesMin,
+          seconds: TextConstants.reversecrunchesMin,
           progress: 0,
           video: PathConstatnts.reverseCrunch,
         ),
         ExerciseData(
           title: TextConstants.rightSideCrunch,
           description: TextConstants.sideCrunchDescription,
-          image: '',
+          pic: PathConstatnts.sideCrunchPic,
           steps: [
             TextConstants.rightSideCrunchDescription1,
             TextConstants.rightSideCrunchDescription2,
@@ -1066,14 +1069,14 @@ class DataConstants {
             TextConstants.rightSideCrunchDescription5,
             TextConstants.rightSideCrunchDescription6
           ],
-          minutes: TextConstants.rightSideCrunchMin,
+          seconds: TextConstants.rightSideCrunchMin,
           progress: 0,
           video: PathConstatnts.sideCrunch,
         ),
         ExerciseData(
           title: TextConstants.leftSideCrunch,
           description: TextConstants.sideCrunchDescription,
-          image: '',
+          pic: PathConstatnts.sideCrunchPic,
           steps: [
             TextConstants.leftSideCrunchDescription1,
             TextConstants.leftSideCrunchDescription2,
@@ -1082,15 +1085,16 @@ class DataConstants {
             TextConstants.leftSideCrunchDescription5,
             TextConstants.leftSideCrunchDescription6
           ],
-          minutes: TextConstants.leftSideCrunchMin,
+          seconds: TextConstants.leftSideCrunchMin,
           progress: 0,
           video: PathConstatnts.sideCrunch,
         ),
       ],
-      image: '',
+      image: PathConstatnts.abs,
       progress: 0,
       title: TextConstants.abs,
     ),
+    
     //Cardio
     WorkoutData(
       currentProgress: 0,
@@ -1098,8 +1102,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.jumpRopeDescription,
-          image: '',
-          minutes: TextConstants.jumpRopeMin,
+          pic: PathConstatnts.jumpRopePic,
+          seconds: TextConstants.jumpRopeMin,
           progress: 0,
           title: TextConstants.jumpRope,
           video: PathConstatnts.jumpRope,
@@ -1117,8 +1121,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sideHopDescription,
-          image: '',
-          minutes: TextConstants.sideHopMin,
+          pic: PathConstatnts.sideToSideHopPic,
+          seconds: TextConstants.sideHopMin,
           progress: 0,
           title: TextConstants.sideHop,
           video: PathConstatnts.sideToSideHop,
@@ -1131,8 +1135,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.jumpingJacksDescription,
-          image: '',
-          minutes: TextConstants.jumpingJackMin,
+          pic: PathConstatnts.jumpJacksPic,
+          seconds: TextConstants.jumpingJackMin,
           progress: 0,
           title: TextConstants.jumpingJack,
           video: PathConstatnts.jumpingJacks,
@@ -1145,8 +1149,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.highKneesDescription,
-          image: '',
-          minutes: TextConstants.highKnessMin,
+          pic: PathConstatnts.highKneesPic,
+          seconds: TextConstants.highKnessMin,
           progress: 0,
           title: TextConstants.highKness,
           video: PathConstatnts.highKnees,
@@ -1160,11 +1164,12 @@ class DataConstants {
           ],
         )
       ],
-      image: '',
-      minutes: TextConstants.cardioMinutes,
+      image: PathConstatnts.cardio,
+      seconds: TextConstants.cardioseconds,
       progress: 0,
       title: TextConstants.cardio,
     ),
+    
     //Yoga container
     WorkoutData(
       currentProgress: 0,
@@ -1172,8 +1177,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.cowPoseDescription,
-          image: '',
-          minutes: TextConstants.cowPoseMin,
+          pic: PathConstatnts.cowPosePic,
+          seconds: TextConstants.cowPoseMin,
           progress: 0,
           title: TextConstants.cowPose,
           video: PathConstatnts.cowPose,
@@ -1188,8 +1193,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.childPoseDescription,
-          image: PathConstatnts.childPose,
-          minutes: TextConstants.childPoseMin,
+          pic: PathConstatnts.childPose,
+          seconds: TextConstants.childPoseMin,
           progress: 0,
           title: TextConstants.childPose,
           video: PathConstatnts.childPose,
@@ -1204,8 +1209,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.highLungeDescription,
-          image: '',
-          minutes: TextConstants.highLungeMin,
+          pic: PathConstatnts.highLungePic,
+          seconds: TextConstants.highLungeMin,
           progress: 0,
           title: TextConstants.highLunge,
           video: PathConstatnts.highLunge,
@@ -1220,8 +1225,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.warriorIIDescription,
-          image: PathConstatnts.warriorII,
-          minutes: TextConstants.warriorIIMin,
+          pic: PathConstatnts.warriorII,
+          seconds: TextConstants.warriorIIMin,
           progress: 0,
           title: TextConstants.warriorII,
           video: PathConstatnts.warriorIIPose,
@@ -1235,8 +1240,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.downwardDogDescription,
-          image: PathConstatnts.downwardDogImage,
-          minutes: TextConstants.downwardDogMin,
+          pic: PathConstatnts.downwardDogImage,
+          seconds: TextConstants.downwardDogMin,
           progress: 0,
           title: TextConstants.downwardDog,
           video: PathConstatnts.downwardDog,
@@ -1254,8 +1259,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.upwardDogDescription,
-          image: '',
-          minutes: TextConstants.upwardDogMin,
+          pic: PathConstatnts.upwardDogPic,
+          seconds: TextConstants.upwardDogMin,
           progress: 0,
           title: TextConstants.upwardDog,
           video: '',
@@ -1272,8 +1277,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.reverseWarriorDescription,
-          image: '',
-          minutes: TextConstants.reverseWarriorMin,
+          pic: PathConstatnts.reverseWarriorPic,
+          seconds: TextConstants.reverseWarriorMin,
           progress: 0,
           title: TextConstants.reverseWarrior,
           video: PathConstatnts.reverseWarrior,
@@ -1286,8 +1291,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.highPlankDescription,
-          image: '',
-          minutes: TextConstants.highPlankMin,
+          pic: PathConstatnts.plankPic,
+          seconds: TextConstants.highPlankMin,
           progress: 0,
           title: TextConstants.highPlank,
           video: PathConstatnts.plank,
@@ -1299,8 +1304,8 @@ class DataConstants {
           ],
         ),
       ],
-      image: '',
-      minutes: TextConstants.yogaMinutes,
+      image: PathConstatnts.yogaPic,
+      seconds: TextConstants.yogaseconds,
       progress: 0,
       title: TextConstants.yoga,
     ),
@@ -1312,8 +1317,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.sumoSquatDescription,
-          image: '',
-          minutes: TextConstants.sumoSquatsMin,
+          pic: PathConstatnts.sumoSquatsPic,
+          seconds: TextConstants.sumoSquatsMin,
           progress: 0,
           title: TextConstants.sumoSquats,
           video: PathConstatnts.sumoSquats,
@@ -1328,8 +1333,8 @@ class DataConstants {
         ),
         ExerciseData(
             description: TextConstants.donkeyKicksDescription,
-            image: '',
-            minutes: TextConstants.thighdonkeyKicksThighsLeftMin,
+            pic: PathConstatnts.donkeyKicksPic,
+            seconds: TextConstants.thighdonkeyKicksThighsLeftMin,
             progress: 0,
             title: TextConstants.donkeyKicksLeft,
             video: PathConstatnts.donkeyKicks,
@@ -1342,8 +1347,8 @@ class DataConstants {
             ]),
         ExerciseData(
           description: TextConstants.donkeyKicksDescription,
-          image: '',
-          minutes: TextConstants.thighdonkeyKicksThighsRightMin,
+          pic: PathConstatnts.donkeyKicksPic,
+          seconds: TextConstants.thighdonkeyKicksThighsRightMin,
           progress: 0,
           title: TextConstants.donkeyKicksRight,
           video: PathConstatnts.donkeyKicks,
@@ -1357,8 +1362,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sideLegLiftLeftDescription,
-          image: '',
-          minutes: TextConstants.sideLegLiftLeftMin,
+          pic: PathConstatnts.sideLegLiftPic,
+          seconds: TextConstants.sideLegLiftLeftMin,
           progress: 0,
           title: TextConstants.sideLegLiftLeft,
           video: PathConstatnts.sideLegLift,
@@ -1376,8 +1381,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sideLegLiftLeftDescription,
-          image: '',
-          minutes: TextConstants.sideLegLiftRightMin,
+          pic: PathConstatnts.sideLegLiftPic,
+          seconds: TextConstants.sideLegLiftRightMin,
           progress: 0,
           title: TextConstants.sideLegLiftRight,
           video: PathConstatnts.sideLegLift,
@@ -1395,8 +1400,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sumoSquatDescription,
-          image: '',
-          minutes: TextConstants.sumoSquatsMin,
+          pic: PathConstatnts.sumoSquatsPic,
+          seconds: TextConstants.sumoSquatsMin,
           progress: 0,
           title: TextConstants.sumoSquats,
           video: PathConstatnts.sumoSquats,
@@ -1410,8 +1415,8 @@ class DataConstants {
           ],
         )
       ],
-      image: '',
-      minutes: TextConstants.thighsMinutes,
+      image: PathConstatnts.thighsPic,
+      seconds: TextConstants.thighsseconds,
       progress: 0,
       title: TextConstants.thighs,
     ),
@@ -1423,8 +1428,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.crissCrossDescription,
-          image: '',
-          minutes: TextConstants.crissCrossMin,
+          pic: PathConstatnts.crissCrossPic,
+          seconds: TextConstants.crissCrossMin,
           progress: 0,
           title: TextConstants.crissCross,
           video: PathConstatnts.crissCross,
@@ -1439,8 +1444,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.doubleLegStretchDescription,
-          image: '',
-          minutes: TextConstants.doubleLegStretchMin,
+          pic: PathConstatnts.doubleLegStretchPic,
+          seconds: TextConstants.doubleLegStretchMin,
           progress: 0,
           title: TextConstants.doubleLegStretch,
           video: PathConstatnts.doubleLegStretch,
@@ -1458,8 +1463,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.scissorKicksDescription,
-          image: '',
-          minutes: TextConstants.scissorKicksNin,
+          pic: PathConstatnts.scissorKicksPic,
+          seconds: TextConstants.scissorKicksNin,
           progress: 0,
           title: TextConstants.scissorKicks,
           video: PathConstatnts.scissorKicks,
@@ -1474,8 +1479,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.plankLegLiftDescription,
-          image: '',
-          minutes: TextConstants.plankLegLiftMin,
+          pic: PathConstatnts.plankLegLiftPic,
+          seconds: TextConstants.plankLegLiftMin,
           progress: 0,
           title: TextConstants.plankLegLift,
           video: PathConstatnts.plankLegLift,
@@ -1490,8 +1495,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.teaserDescription,
-          image: '',
-          minutes: TextConstants.teaserMin,
+          pic: PathConstatnts.teaserPic,
+          seconds: TextConstants.teaserMin,
           progress: 0,
           title: TextConstants.teaser,
           video: PathConstatnts.teaser,
@@ -1505,8 +1510,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.plankRockDescription,
-          image: '',
-          minutes: TextConstants.plankRockMin,
+          pic: PathConstatnts.plankRockPic,
+          seconds: TextConstants.plankRockMin,
           progress: 0,
           title: TextConstants.plankRock,
           video: PathConstatnts.plankRock,
@@ -1518,8 +1523,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.singleLegStretchDescription,
-          image: '',
-          minutes: TextConstants.singleLegStretchMin,
+          pic: PathConstatnts.singleLegStretchPic,
+          seconds: TextConstants.singleLegStretchMin,
           progress: 0,
           title: TextConstants.singleLegStretch,
           video: PathConstatnts.singleLegStretch,
@@ -1533,8 +1538,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.pilates100Description,
-          image: '',
-          minutes: TextConstants.pilates100Min,
+          pic: PathConstatnts.pilates100Pic,
+          seconds: TextConstants.pilates100Min,
           progress: 0,
           title: TextConstants.pilates100,
           video: PathConstatnts.pilates100,
@@ -1548,8 +1553,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.legCircleDescription,
-          image: '',
-          minutes: TextConstants.legCircleMin,
+          pic: PathConstatnts.legCirclePic,
+          seconds: TextConstants.legCircleMin,
           progress: 0,
           title: TextConstants.legCircle,
           video: PathConstatnts.legCircle,
@@ -1562,8 +1567,8 @@ class DataConstants {
           ],
         )
       ],
-      image: '',
-      minutes: TextConstants.pilatesMinutes,
+      image: PathConstatnts.pilatesPic,
+      seconds: TextConstants.pilatesseconds,
       progress: 0,
       title: TextConstants.pilates,
     ),
@@ -1575,8 +1580,8 @@ class DataConstants {
       exerciseDataList: [
         ExerciseData(
           description: TextConstants.highKneesDescription,
-          image: '',
-          minutes: TextConstants.highKnessMin,
+          pic: PathConstatnts.highKneesPic,
+          seconds: TextConstants.highKnessMin,
           progress: 0,
           title: TextConstants.highKness,
           video: PathConstatnts.highKnees,
@@ -1591,8 +1596,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.squatsDescription,
-          image: '',
-          minutes: TextConstants.squatsMin,
+          pic: PathConstatnts.squatsPic,
+          seconds: TextConstants.squatsMin,
           progress: 0,
           title: TextConstants.squats,
           video: PathConstatnts.squats,
@@ -1604,8 +1609,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.donkeyKicksDescription,
-          image: '',
-          minutes: TextConstants.donkeyKicksLeftMin,
+          pic: PathConstatnts.donkeyKicksPic,
+          seconds: TextConstants.donkeyKicksLeftMin,
           progress: 0,
           title: TextConstants.donkeyKicksLeft,
           video: PathConstatnts.donkeyKicks,
@@ -1619,8 +1624,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.donkeyKicksDescription,
-          image: '',
-          minutes: TextConstants.donkeyKicksRightMin,
+          pic: PathConstatnts.donkeyKicksPic,
+          seconds: TextConstants.donkeyKicksRightMin,
           progress: 0,
           title: TextConstants.donkeyKicksRight,
           video: PathConstatnts.donkeyKicks,
@@ -1634,8 +1639,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.lungesDescription,
-          image: '',
-          minutes: TextConstants.lungesMin,
+          pic: PathConstatnts.lungesPic,
+          seconds: TextConstants.lungesMin,
           progress: 0,
           title: TextConstants.lunges,
           video: PathConstatnts.lunges,
@@ -1649,8 +1654,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.buttBridgeDescription,
-          image: '',
-          minutes: TextConstants.buttBridgeMin,
+          pic: PathConstatnts.buttBridgePic,
+          seconds: TextConstants.buttBridgeMin,
           progress: 0,
           title: TextConstants.buttBridge,
           video: PathConstatnts.buttBridge,
@@ -1664,8 +1669,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.sumoSquatDescription,
-          image: '',
-          minutes: TextConstants.sumoSquatsMin,
+          pic: PathConstatnts.sumoSquatsPic,
+          seconds: TextConstants.sumoSquatsMin,
           progress: 0,
           title: TextConstants.sumoSquats,
           video: PathConstatnts.sumoSquats,
@@ -1680,8 +1685,8 @@ class DataConstants {
         ),
         ExerciseData(
           description: TextConstants.jumpingSquatsDescription,
-          image: '',
-          minutes: TextConstants.jumpingSquatsMin,
+          pic: PathConstatnts.jumpingSquatsPic,
+          seconds: TextConstants.jumpingSquatsMin,
           progress: 0,
           title: TextConstants.jumpingSquats,
           video: PathConstatnts.jumpingSquats,
@@ -1695,9 +1700,10 @@ class DataConstants {
           ],
         ),
       ],
-      image: '',
-      minutes: TextConstants.bootyMinutes,
+      image: PathConstatnts.bootyPic,
+      seconds: TextConstants.bootyseconds,
       progress: 0,
       title: TextConstants.booty,
-    )];
+    )
+  ];
 }

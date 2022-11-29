@@ -49,7 +49,7 @@ class AnalyticsPageBloc extends Bloc<AnalyticsPageEvent, AnalyticsPageState> {
     }
     final exercise = exercises.where((e) => e.progress == 1).toList();
     for (var e in exercise) {
-      timeSpent += e.minutes;
+      timeSpent += e.seconds;
     }
     return timeSpent;
   }

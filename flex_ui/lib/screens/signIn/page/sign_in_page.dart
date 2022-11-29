@@ -26,23 +26,18 @@ class SignInPage extends StatelessWidget {
           return const SignInContent();
         },
         listenWhen: (_, currState) =>
-            currState is NextForgotPasswordPageState ||
-            currState is NextSignUpState ||
-            currState is NextTabBarPageState ||
-            currState is SignInErrorState,
+            currState is NextForgotPasswordPageState || currState is NextSignUpPageState || currState is NextTabBarPageState || currState is ErrorState,
         listener: (context, state) {
           if (state is NextForgotPasswordPageState) {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => const ForgotPasswordPage()));
-          } else if (state is NextSignUpState) {
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (_) => const SignUpPage()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ForgotPasswordPage()));
+          } else if (state is NextSignUpPageState) {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const SignUpPage()));
           } else if (state is NextTabBarPageState) {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => const TabBarPage()));
-          } else if (state is SignInErrorState) {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text(state.message)));
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const TabBarPage()));
+          } else if (state is ErrorState) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.message)),
+            );
           }
         },
       ),
