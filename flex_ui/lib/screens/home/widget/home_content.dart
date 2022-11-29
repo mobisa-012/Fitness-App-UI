@@ -225,7 +225,7 @@ class HomeContent extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Text(
-            'Booty Challenge',
+            'Challenge',
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -241,19 +241,11 @@ class HomeContent extends StatelessWidget {
             children: [
               const SizedBox(width: 20),
               WorkoutCard(
-                  color: AppColors.yogaContainerColor,
-                  workout: DataConstants.categoriesWorkouts[0],
+                  color: AppColors.bootyTrainingContainerColor,
+                  workout: DataConstants.categoriesWorkouts[3],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                            workout: DataConstants.workouts[3],
-                          )))),
-              const SizedBox(width: 15),
-              WorkoutCard(
-                  color: AppColors.thighsContainerColor,
-                  workout: DataConstants.categoriesWorkouts[1],
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => WorkoutDetailsPage(
-                            workout: DataConstants.workouts[4],
+                            workout: DataConstants.workouts[6],
                           )))),
               const SizedBox(width: 15),
               WorkoutCard(
@@ -265,11 +257,19 @@ class HomeContent extends StatelessWidget {
                           )))),
               const SizedBox(width: 15),
               WorkoutCard(
-                  color: AppColors.bootyTrainingContainerColor,
-                  workout: DataConstants.categoriesWorkouts[3],
+                  color: AppColors.weightLossContainerColor,
+                  workout: DataConstants.homeWorkoutsTopWorkouts[0],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                            workout: DataConstants.workouts[6],
+                            workout: DataConstants.workouts[0],
+                          )))),
+              const SizedBox(width: 15),
+              WorkoutCard(
+                  color: AppColors.thighsContainerColor,
+                  workout: DataConstants.categoriesWorkouts[1],
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => WorkoutDetailsPage(
+                            workout: DataConstants.workouts[4],
                           )))),
               const SizedBox(width: 20),
             ],
