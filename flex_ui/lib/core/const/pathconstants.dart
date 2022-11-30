@@ -78,7 +78,7 @@ class PathConstatnts {
   static const String downwardDogImage =
       'assets/images/workout_images/downward_dog.png';
   static const String abs = 'assets/images/workout_images/abs.png';
-  static const String abholdPic = 'assets/workout_videos/ab_hold.gif';
+  static const String abholdPic = 'assets/images/workout_images/ab_hold.png';
   static const String bootyPic = 'assets/images/workout_images/booty.png';
   static const String buttBridgePic =
       'assets/images/workout_images/butt_bridge.png';

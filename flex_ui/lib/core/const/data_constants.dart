@@ -245,6 +245,7 @@ class DataConstants {
       progress: 0,
       title: TextConstants.abs,
     ),
+    
     //Cardio
     WorkoutData(
       currentProgress: 0,
