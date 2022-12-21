@@ -3,7 +3,7 @@ class ExerciseData {
   final int seconds;
   final double progress;
   final String pic;
-  final String video;
+  final String image;
   final String description;
   final List<String> steps;
 
@@ -13,11 +13,11 @@ class ExerciseData {
       required this.seconds,
       required this.progress,
       required this.title,
-      required this.video,
+      required this.image,
       required this.steps});
 
   @override
   String toString() {
-    return 'ExerciseData(title: $title, seconds: $seconds, progress: $progress, video: $video)';
+    return 'ExerciseData(title: $title, seconds: $seconds, progress: $progress, image: $image)';
   }
 }

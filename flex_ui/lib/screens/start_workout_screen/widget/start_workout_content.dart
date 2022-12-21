@@ -4,10 +4,10 @@ import 'package:flex_ui/core/const/text_constants.dart';
 import 'package:flex_ui/data/exercise_data.dart';
 import 'package:flex_ui/screens/common_widgets/fitness_button.dart';
 import 'package:flex_ui/screens/start_workout_screen/bloc/start_workout_screen_bloc.dart';
+import 'package:flex_ui/screens/start_workout_screen/widget/start_workout_video.dart';
 import 'package:flex_ui/screens/workout_details_screen/bloc/workoutdetails_bloc.dart'
     as workout_bloc;
 import 'package:flex_ui/screens/start_workout_screen/page/start_workout_screen_page.dart';
-import 'package:flex_ui/screens/start_workout_screen/widget/start_workout_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,7 +41,7 @@ class StartWorkoutContent extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          _createVideo(context),
+          _createimage(context),
           const SizedBox(
             height: 8,
           ),
@@ -94,8 +94,7 @@ class StartWorkoutContent extends StatelessWidget {
     );
   }
 
-  Widget _createVideo(BuildContext context) {
-    final bloc = BlocProvider.of<StartWorkoutBloc>(context);
+  Widget _createimage(BuildContext context) {
     return Container(
       height: 264,
       width: double.infinity,
@@ -103,15 +102,7 @@ class StartWorkoutContent extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         color: AppColors.homeBackground,
       ),
-      child: StartWorkoutVideo(
-        exercise: exercise,
-        onPlayTapped: (time) {
-          bloc.add(PlayTappedEvent(time: time));
-        },
-        onPauseTapped: (time) {
-          bloc.add(PausedTappedEvent(time: time));
-        },
-      ),
+      child:  StartWorkoutImage(exercise: exercise),
     );
   }
 

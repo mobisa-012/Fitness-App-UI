@@ -59,7 +59,6 @@ class _MyAppState extends State<MyApp> {
           fontFamily: 'Roboto',
           textTheme:
               const TextTheme(bodyText1: TextStyle(color: AppColors.textColor)),
-          //fontFamily: 'NotoSansKR',
           scaffoldBackgroundColor: Colors.white,
           visualDensity: VisualDensity.adaptivePlatformDensity),
       home: isLoggedIn ? const TabBarPage() : OnboardingPage(),

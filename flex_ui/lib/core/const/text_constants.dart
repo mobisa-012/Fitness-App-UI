@@ -40,7 +40,7 @@ class TextConstants {
   static const String confirmpasswordPlaceholder = 'Re-enter password';
   static const String confirmpasswordErrorText = 'Password does not match';
 
-  static const String alreadyHaveAnAccount = 'Already have an account?';
+  static const String signInWith = 'Sign In With?';
 
   // Sign In
   static const String passwordPlaceholderSignIn = 'Enter your password';
@@ -54,7 +54,7 @@ class TextConstants {
   static const String save = 'Save';
   static const String me = 'Me';
   //weightlosscard
-  static const String topWorkouts = 'Top Workouts 💪';
+  static const String topWorkouts = 'Top Workouts';
   static const String weightLossTraining = 'Weight Loss Training';
   static const String fullBodyWorkout = 'Full Body';
   static const String time = 'Time';

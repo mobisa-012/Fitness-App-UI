@@ -1,10 +1,14 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flex_ui/core/const/colors.dart';
+import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
 import 'package:flex_ui/core/services/validation_service.dart';
 import 'package:flex_ui/screens/signup/bloc/signup_bloc.dart';
-import 'package:flutter/gestures.dart';
+// import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../common_widgets/fitness_button.dart';
 import '../../common_widgets/fitness_loading.dart';
@@ -60,8 +64,9 @@ class SignUpContent extends StatelessWidget {
             _createSignUpButton(context),
             // Spacer(),
             const SizedBox(height: 40),
-            _createHaveAccountText(context),
+            // _createHaveAccountText(context),
             const SizedBox(height: 30),
+            _createAccountsTab(context),
           ],
         ),
       ),
@@ -160,14 +165,12 @@ class SignUpContent extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: BlocBuilder<SignUpBloc, SignUpState>(
-        buildWhen: (_, currState) =>
-            currState is SignUpButtonEnabledState,
+        buildWhen: (_, currState) => currState is SignUpButtonEnabledState,
         builder: (context, state) {
           return FitnessButton(
             title: TextConstants.signUp,
-            isEnabled: state is SignUpButtonEnabledState
-                ? state.isEnabled
-                : false,
+            isEnabled:
+                state is SignUpButtonEnabledState ? state.isEnabled : false,
             onTap: () {
               FocusScope.of(context).unfocus();
               bloc.add(SignUpTappedEvent());
@@ -178,30 +181,61 @@ class SignUpContent extends StatelessWidget {
     );
   }
 
-  Widget _createHaveAccountText(BuildContext context) {
-    final bloc = BlocProvider.of<SignUpBloc>(context);
-    return RichText(
-      text: TextSpan(
-        text: TextConstants.alreadyHaveAnAccount,
-        style: const TextStyle(
-          color: AppColors.textColor,
-          fontSize: 18,
-        ),
-        children: [
-          TextSpan(
-            text: " ${TextConstants.signIn}",
-            style: const TextStyle(
-              color: AppColors.onboardingColor,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                bloc.add(SignInTappedEvent());
-              },
-          ),
-        ],
-      ),
+  // Widget _createHaveAccountText(BuildContext context) {
+  //   final bloc = BlocProvider.of<SignUpBloc>(context);
+  //   return RichText(
+  //     text: TextSpan(
+  //       text: TextConstants.signInWith,
+  //       style: const TextStyle(
+  //         color: AppColors.textColor,
+  //         fontSize: 18,
+  //       ),
+  //       children: [
+  //         TextSpan(
+  //           text: " ${TextConstants.signIn}",
+  //           style: const TextStyle(
+  //             color: AppColors.onboardingColor,
+  //             fontSize: 18,
+  //             fontWeight: FontWeight.bold,
+  //           ),
+  //           recognizer: TapGestureRecognizer()
+  //             ..onTap = () {
+  //               bloc.add(SignInTappedEvent());
+  //             },
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
+  Widget _createAccountsTab(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        TextButton(
+                    onPressed: () =>
+                        launch('https://www.facebook.com/perpetio/'),
+                    style: TextButton.styleFrom(
+                        shape: const CircleBorder(),
+                        backgroundColor: Colors.white,
+                        elevation: 1),
+                    child: Image.asset(PathConstatnts.facebook)),
+                TextButton(
+                    onPressed: () =>
+                        launch('https://www.instagram.com/perpetio/'),
+                    style: TextButton.styleFrom(
+                        shape: const CircleBorder(),
+                        backgroundColor: Colors.white,
+                        elevation: 1),
+                    child: Image.asset(PathConstatnts.facebook)),
+                TextButton(
+                    onPressed: () => launch('https://twitter.com/perpetio'),
+                    style: TextButton.styleFrom(
+                        shape: const CircleBorder(),
+                        backgroundColor: Colors.white,
+                        elevation: 1),
+                    child: Image.asset(PathConstatnts.twitter))
+      ],
     );
   }
 }

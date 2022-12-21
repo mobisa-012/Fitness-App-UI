@@ -54,7 +54,7 @@ class PathConstatnts {
   static const String sideCrunch = 'assets/workout_videos/side crunch.gif';
   static const String sideLegLift = 'assets/workout_videos/side leg lift.gif';
   static const String sideToSideHop =
-      'assets/workout_videos/Side To Side Hops.gif';
+      'assets/workout_videos/sidetosidehop.gif';
   static const String singleLegStretch =
       'assets/workout_videos/single leg stretch.gif';
   static const String squatsVideo = 'assets/workout_videos/squats.gif';
