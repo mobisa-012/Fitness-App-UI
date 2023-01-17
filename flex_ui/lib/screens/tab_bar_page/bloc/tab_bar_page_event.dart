@@ -6,7 +6,5 @@ abstract class TabBarPageEvent {}
 class TabBarItemTappedEvent extends TabBarPageEvent {
   final int index;
 
-  TabBarItemTappedEvent({
-    required this.index
-  });
+  TabBarItemTappedEvent(this.index);
 }

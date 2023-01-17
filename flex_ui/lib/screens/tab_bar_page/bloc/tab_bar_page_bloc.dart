@@ -5,10 +5,11 @@ part 'tab_bar_page_event.dart';
 part 'tab_bar_page_state.dart';
 
 class TabBarPageBloc extends Bloc<TabBarPageEvent, TabBarPageState> {
-  TabBarPageBloc() : super(TabBarPageInitial()) {
-    on<TabBarItemTappedEvent>((event, emit) async {
-      emit(TabBarItemSelectedState(index: currentIndex));
-    });
+  TabBarPageBloc() : super(TabBarPageInitial()) 
+  {
+ on<TabBarItemTappedEvent>((event, emit) async {
+    emit(TabBarItemSelectedState(currentIndex));
+   });
   }
 
   int currentIndex = 0;
@@ -17,7 +18,7 @@ class TabBarPageBloc extends Bloc<TabBarPageEvent, TabBarPageState> {
   Stream<TabBarPageState> mapEventToState(TabBarPageEvent event) async* {
     if (event is TabBarItemTappedEvent) {
       currentIndex = event.index;
-      yield TabBarItemSelectedState(index: currentIndex);
+      yield TabBarItemSelectedState(currentIndex);
     }
   }
 }

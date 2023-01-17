@@ -9,13 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TabBarPage extends StatelessWidget {
-  const TabBarPage({Key? key}) : super(key: key);
+  const TabBarPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<TabBarPageBloc>(
+    return BlocProvider(
       create: (BuildContext context) => TabBarPageBloc(),
       child: BlocConsumer<TabBarPageBloc, TabBarPageState>(
+        listener: (context, state) {},
         buildWhen: (_, currState) =>
             currState is TabBarPageInitial ||
             currState is TabBarItemSelectedState,
@@ -23,47 +24,40 @@ class TabBarPage extends StatelessWidget {
           final bloc = BlocProvider.of<TabBarPageBloc>(context);
           return Scaffold(
             body: _createBody(context, bloc.currentIndex),
-            bottomNavigationBar: _createdBottomTabBar(context),
+            bottomNavigationBar: _createBottomBar(context),
           );
         },
-        listener: (context, state) {},
       ),
     );
   }
 
-  Widget _createdBottomTabBar(BuildContext context) {
+  Widget _createBottomBar(BuildContext context) {
     final bloc = BlocProvider.of<TabBarPageBloc>(context);
     return BottomNavigationBar(
       currentIndex: bloc.currentIndex,
-      fixedColor: AppColors.categoriesWorkoutsTextColor,
+      fixedColor: AppColors.onboardingColor,
       items: [
-        BottomNavigationBarItem(
+         BottomNavigationBarItem(
             icon: Image(
               image: const AssetImage(PathConstatnts.home),
-              color: bloc.currentIndex == 0
-                  ? AppColors.onboardingColor
-                  : null,
+              color: bloc.currentIndex == 0 ? AppColors.onboardingColor : null,
             ),
             label: TextConstants.home),
         BottomNavigationBarItem(
             icon: Image(
-              image: const AssetImage(PathConstatnts.analytics),
-              color: bloc.currentIndex == 1
-                  ? AppColors.onboardingColor
-                  : null,
-            ),
+                image: const AssetImage(PathConstatnts.analytics),
+                color:
+                    bloc.currentIndex == 1 ? AppColors.onboardingColor : null),
             label: TextConstants.analytics),
         BottomNavigationBarItem(
             icon: Image(
               image: const AssetImage(PathConstatnts.account),
-              color: bloc.currentIndex == 2
-                  ? AppColors.onboardingColor
-                  : null,
+              color: bloc.currentIndex == 2 ? AppColors.onboardingColor : null,
             ),
-            label: TextConstants.me),
+            label: TextConstants.me)
       ],
       onTap: (index) {
-        bloc.add(TabBarItemTappedEvent(index: index));
+        bloc.add(TabBarItemTappedEvent(index));
       },
     );
   }

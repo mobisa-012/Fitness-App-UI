@@ -2,13 +2,15 @@
 
 import 'package:flex_ui/core/const/colors.dart';
 import 'package:flex_ui/core/const/pathconstants.dart';
+// import 'package:flex_ui/core/const/pathconstants.dart';
 import 'package:flex_ui/core/const/text_constants.dart';
+import 'package:flex_ui/core/services/auth_service.dart';
 import 'package:flex_ui/core/services/validation_service.dart';
 import 'package:flex_ui/screens/signup/bloc/signup_bloc.dart';
 // import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 import '../../common_widgets/fitness_button.dart';
 import '../../common_widgets/fitness_loading.dart';
@@ -212,29 +214,22 @@ class SignUpContent extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TextButton(
-                    onPressed: () =>
-                        launch('https://www.facebook.com/perpetio/'),
-                    style: TextButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: Colors.white,
-                        elevation: 1),
-                    child: Image.asset(PathConstatnts.facebook)),
-                TextButton(
-                    onPressed: () =>
-                        launch('https://www.instagram.com/perpetio/'),
-                    style: TextButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: Colors.white,
-                        elevation: 1),
-                    child: Image.asset(PathConstatnts.facebook)),
-                TextButton(
-                    onPressed: () => launch('https://twitter.com/perpetio'),
-                    style: TextButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: Colors.white,
-                        elevation: 1),
-                    child: Image.asset(PathConstatnts.twitter))
+        ElevatedButton(
+          // style: ButtonStyle(
+          //   backgroundColor: AppColors.iconsActiveColor,
+          // ),
+        onPressed: () async{
+          await signInWithGoogle();
+        }, 
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text('Sign in with Google'),
+            SizedBox(width: 5,),
+            Image(image: AssetImage(PathConstatnts.google))
+          ],
+        ),
+        ),
       ],
     );
   }

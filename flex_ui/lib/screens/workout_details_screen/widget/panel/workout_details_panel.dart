@@ -55,9 +55,9 @@ class WorkoutDetailsPanel extends StatelessWidget {
   }
 
   Widget _createWorkoutData() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Expanded(
+    return Flex(
+      direction: Axis.horizontal,
+      children: [Expanded(
         child: Row(
           children: [
             WorkoutTag(
@@ -72,7 +72,7 @@ class WorkoutDetailsPanel extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ),]
     );
   }
 

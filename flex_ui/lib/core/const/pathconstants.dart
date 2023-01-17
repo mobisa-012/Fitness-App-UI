@@ -5,6 +5,7 @@ class PathConstatnts {
   static const String arrow = 'assets/icons/arrow_back.png';
   static const String eye = 'assets/icons/eye_icon.png';
   static const String facebook = 'assets/icons/facebook.png';
+  static const String google = 'assets/icons/google.png';
   static const String notifications = 'assets/icons/notifications.png';
   static const String account = 'assets/icons/person.png';
   static const String settings = 'assets/icons/settings_icon.png';
@@ -17,7 +18,7 @@ class PathConstatnts {
   static const String fullbody = 'assets/images/home/full_body1.png';
   static const String profileAvatar = 'assets/images/home/profile.png';
   static const String yoga = 'assets/images/home/yoga2.png';
-  static const String squats = 'assets/images/home/squats2.1.png';
+  static const String squats = 'assets/images/home/squats.gif';
 
   //onboarding screen images
   static const String onboarding1 = 'assets/images/onboarding/onboarding1.png';

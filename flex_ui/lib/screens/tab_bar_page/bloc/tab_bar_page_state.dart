@@ -8,7 +8,7 @@ class TabBarPageInitial extends TabBarPageState {}
 class TabBarItemSelectedState extends TabBarPageState {
   final int index;
 
-  TabBarItemSelectedState ({
-    required this.index
-  });
+  TabBarItemSelectedState (
+    this.index
+  );
 }

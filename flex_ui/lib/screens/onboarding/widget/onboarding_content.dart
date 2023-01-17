@@ -47,7 +47,7 @@ class OnboardingContent extends StatelessWidget {
           height: 30,
         ),
         BlocBuilder<OnboardingBloc, OnboardingState>(
-          buildWhen: (_, currState) => currState is PageChangedEvent,
+          buildWhen: (_, currState) => currState is PageChangedState,
           builder: (context, state) {
             return DotsIndicator(
               dotsCount: 3,

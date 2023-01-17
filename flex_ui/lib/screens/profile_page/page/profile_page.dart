@@ -11,7 +11,7 @@ import 'package:flex_ui/screens/common_widgets/setting_container.dart';
 import 'package:flex_ui/screens/edit_account_screen/page/edit_account_screen.dart';
 import 'package:flex_ui/screens/profile_page/bloc/profile_page_bloc.dart';
 import 'package:flex_ui/screens/reminder/page/reminder_page.dart';
-import 'package:flex_ui/screens/signIn/page/sign_in_page.dart';
+import 'package:flex_ui/screens/signup/page/signup_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -129,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   AuthService.signOut();
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (_) => const SignInPage()),
+                    MaterialPageRoute(builder: (_) => const SignUpPage()),
                   );
                 }),
             const SizedBox(height: 15),

@@ -17,6 +17,7 @@ class ExercisesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      shrinkWrap: true,
       padding: const EdgeInsets.only(top: 10),
       itemCount: exercises.length,
       itemBuilder: (context, index) {

@@ -10,7 +10,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // ignore: depend_on_referenced_packages
 import 'package:timezone/data/latest.dart' as tz;
 
-void main() async {
+ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
               const TextTheme(bodyText1: TextStyle(color: AppColors.textColor)),
           scaffoldBackgroundColor: Colors.white,
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: isLoggedIn ? const TabBarPage() : OnboardingPage(),
+      home: isLoggedIn ?  const TabBarPage() : OnboardingPage(),
     );
   }
 

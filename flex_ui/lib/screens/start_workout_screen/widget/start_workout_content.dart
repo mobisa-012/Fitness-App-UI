@@ -34,34 +34,41 @@ class StartWorkoutContent extends StatelessWidget {
   Widget _createDetailedExercise(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _createBackButton(context),
-          const SizedBox(
-            height: 20,
-          ),
-          _createimage(context),
-          const SizedBox(
-            height: 8,
-          ),
-          Expanded(
-            child: ListView(
+      width: double.infinity,
+      child: SizedBox(
+        // height: MediaQuery.of(context).size.height,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _createBackButton(context),
+            const SizedBox(
+              height: 20,
+            ),
+            _createimage(context),
+            const SizedBox(
+              height: 8,
+            ),
+            Column(
               children: [
-                _createTitle(),
-                const SizedBox(
-                  height: 9,
+                ListView(
+                  shrinkWrap: true,
+                  children: [
+                    _createTitle(),
+                    const SizedBox(
+                      height: 9,
+                    ),
+                    _createDescription(),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    _createSteps(),
+                  ],
                 ),
-                _createDescription(),
-                const SizedBox(
-                  height: 30,
-                ),
-                _createSteps(),
               ],
             ),
-          ),
-          _createTimeTracker(context),
-        ],
+            _createTimeTracker(context),
+          ],
+        ),
       ),
     );
   }
@@ -96,7 +103,7 @@ class StartWorkoutContent extends StatelessWidget {
 
   Widget _createimage(BuildContext context) {
     return Container(
-      height: 264,
+      height: 200,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -109,7 +116,7 @@ class StartWorkoutContent extends StatelessWidget {
   Widget _createTitle() {
     return Text(
       exercise.title,
-      style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
     );
   }
 
