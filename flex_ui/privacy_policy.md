@@ -1,4 +1,4 @@
-# Privacy Policy - Fikisha Mashinani
+# Privacy Policy - Flex-Femme
 
 Effective Date: [11-Nov-2023]
 
